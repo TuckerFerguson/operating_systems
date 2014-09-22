@@ -254,8 +254,7 @@ void* process_file(void *ptr)
 		int num = parse_line(linebuffer, " []\"", field);
 		update_webstats(num, field, local_stats);
 		printf("Starting date: %s\n",field[3]);
-		free_tokens(num, field);
-
+        free_tokens(num, field);
 		while (fgets(linebuffer, MAX_LINE_SIZE, fin) != NULL)
 		{
 			int num = parse_line(linebuffer, " []\"", field);
@@ -266,10 +265,11 @@ void* process_file(void *ptr)
 		}
 		printf("Ending date: %s\n", end_date);
 		free(end_date);
-        
+		free(field);
+		free(linebuffer);
         combine_stats(local_stats);
-        free(local_stats);
 	}
+    free(local_stats);
     return NULL;
 }
 
@@ -319,6 +319,10 @@ int main(int argc, char **argv)
         join_threads(threads[i]);
 
 	print_webstats();
+
+//	for(i=1; i<argc; i++)
+//		pthread_destroy
+
 	exit(0);
 
 }
