@@ -7,21 +7,38 @@ char** parse_line(char * line);
 
 char* get_command(char* line)
 {
-    return parse_line(line)[0];
+    char* copy = (char *)malloc(strlen(line) * sizeof(char));
+    copy = strcpy(copy, line);
+    char** tokens = parse_line(copy);
+    char* command = tokens[0];
+    
+    int i;
+    for (i = 0; i < 2048; i++)
+        free(tokens[i]);
+    free(tokens);
+    free(copy);
+    return command;
 }
 
 char** get_arguments(char* line)
 {
-    char** tokens = parse_line(line);
+    char* copy = (char *)malloc(strlen(line) * sizeof(char));
+    copy = strcpy(copy, line);
+    char** tokens = parse_line(copy);
+    free(tokens[0]);
+    ++tokens;
+    free(copy);
     return tokens;
 }
 
 char** parse_line(char * line)
 {
     char *next;
-    char *delim = " ";
+    const char *delim = " ";
     int cnt=0;
     char **tokens;
+     
+    tokens = (char**)malloc(2049 * sizeof(char*));
 
     next = strtok(line, delim);
     while (next) {
@@ -33,3 +50,6 @@ char** parse_line(char * line)
 
     return tokens;
 }
+
+
+

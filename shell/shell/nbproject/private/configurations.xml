@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="94">
+<configurationDescriptor version="95">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root="src" name="0">
       <df name="list">
@@ -12,6 +12,7 @@
       <in>CommandParser.c</in>
       <in>CommandParser.h</in>
       <in>TestCommandParser.c</in>
+      <in>common.h</in>
       <in>error.c</in>
       <in>loop.c</in>
       <in>ourhdr.h</in>
@@ -24,7 +25,7 @@
     <conf name="Default" type="0">
       <toolsSet>
         <developmentServer>localhost</developmentServer>
-        <platform>4</platform>
+        <platform>2</platform>
       </toolsSet>
       <compile>
         <compiledirpicklist>
@@ -44,9 +45,10 @@
         <gdb_interceptlist>
           <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
         </gdb_interceptlist>
+        <gdb_signals>
+        </gdb_signals>
         <gdb_options>
           <DebugOptions>
-            <option name="debug_command" value="gdb "/>
           </DebugOptions>
         </gdb_options>
         <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
