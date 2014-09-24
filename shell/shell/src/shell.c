@@ -28,10 +28,13 @@ int main(void)
 		if ( (pid = fork()) < 0)
 			err_sys("fork error");
 
-		else if (pid == 0) {		/* child */
-			execlp(line, line, (char *) 0);
-			err_ret("couldn't execute: %s", line);
-			exit(EXIT_FAILURE);
+		else if (pid == 0) {
+                        /* child */
+                    
+                    char** tokenizedCommandAndArgs;
+                    execvp(tokenizedCommandAndArgs[0], ++tokenizedCommandAndArgs);
+                    err_ret("couldn't execute: %s", line);
+                    exit(EXIT_FAILURE);
 		}
 
 		/* parent */

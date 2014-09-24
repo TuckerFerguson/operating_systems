@@ -3,12 +3,15 @@ LFLAGS=-L$(LIBS)
 CC=gcc
 CFLAGS=-g -Wall
 
-PROGS=shell
+PROGS=shell commandparser
 
 all: $(PROGS) 
 
 shell: shell.o error.o
 	$(CC) $(CFLAGS) -o $@ shell.o error.o $(LIBS)
+
+commandparser: CommandParser.o TestCommandParser.o
+	$(CC) $(CFLAGS) -o $@ CommandParser.o TestCommandParser.o
 
 loop: loop.o
 	$(CC) $(CFLAGS) -o $@  $<
