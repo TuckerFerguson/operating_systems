@@ -7,8 +7,9 @@ PROGS=shell
 
 all: $(PROGS) dox
 
-shell: shell.o
-	$(CC) $(CFLAGS) -o $@  $< $(LIBS)
+
+shell: shell.o error.o
+	$(CC) $(CFLAGS) -o $@ $< 
 
 loop: loop.o
 	$(CC) $(CFLAGS) -o $@  $<
