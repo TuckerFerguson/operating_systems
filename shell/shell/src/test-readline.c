@@ -3,14 +3,13 @@
 #include <stdlib.h>
 #include <readline/readline.h>
 #include <readline/history.h>
-#include <List.h>
-#include <Node.h>
+#include "list/List.h"
+#include "list/Node.h"
 
 int main() {
 
 	char *line;
 	char *prompt = "dash>";
-    
     
 
 	using_history();

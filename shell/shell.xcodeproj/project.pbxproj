@@ -23,7 +23,6 @@
 		EB0F2ACF19D0C5D900291F8D /* doxygen-config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "doxygen-config"; sourceTree = "<group>"; };
 		EB0F2AD019D0C5D900291F8D /* error.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = error.c; sourceTree = "<group>"; };
 		EB0F2AD119D0C5D900291F8D /* loop.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = loop.c; sourceTree = "<group>"; };
-		EB0F2AD219D0C5D900291F8D /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		EB0F2AD319D0C5D900291F8D /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		EB0F2AD419D0C5D900291F8D /* ourhdr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ourhdr.h; sourceTree = "<group>"; };
 		EB0F2AD519D0C5D900291F8D /* test-readline.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "test-readline.c"; sourceTree = "<group>"; };
@@ -155,6 +154,7 @@
 		EB0F2B9119D0C91000291F8D /* libgenericList.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgenericList.a; sourceTree = "<group>"; };
 		EB0F2B9219D0C91000291F8D /* libgenericList.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libgenericList.so; sourceTree = "<group>"; };
 		EB0F2BDD19D0D03300291F8D /* test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBB1125D19D23E6E00C8928C /* shell.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shell.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,10 +199,10 @@
 		EB0F2ACE19D0C5D900291F8D /* src */ = {
 			isa = PBXGroup;
 			children = (
+				EBB1125D19D23E6E00C8928C /* shell.c */,
 				EB0F2ACF19D0C5D900291F8D /* doxygen-config */,
 				EB0F2AD019D0C5D900291F8D /* error.c */,
 				EB0F2AD119D0C5D900291F8D /* loop.c */,
-				EB0F2AD219D0C5D900291F8D /* main.c */,
 				EB0F2AD319D0C5D900291F8D /* Makefile */,
 				EB0F2AD419D0C5D900291F8D /* ourhdr.h */,
 				EB0F2AD519D0C5D900291F8D /* test-readline.c */,
@@ -767,6 +767,10 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/shell/list/libsrc",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -775,6 +779,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/shell/list/libsrc",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

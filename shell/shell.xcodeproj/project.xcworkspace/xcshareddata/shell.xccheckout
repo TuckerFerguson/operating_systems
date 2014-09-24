@@ -10,22 +10,26 @@
 	<string>shell</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>54F038481CEF8CE60D491ED0CC74C49FF371D5E6</key>
+		<string>https://github.com/chilininsd/operating_systems.git</string>
 		<key>8A0C68DD-9F4A-4BC1-976D-0B1FE2C46682</key>
 		<string>https://github.com/chilininsd/operating_systems.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>shell/shell/shell.xcodeproj/project.xcworkspace</string>
+	<string>shell/shell.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>54F038481CEF8CE60D491ED0CC74C49FF371D5E6</key>
+		<string>../../..</string>
 		<key>8A0C68DD-9F4A-4BC1-976D-0B1FE2C46682</key>
-		<string>../../../..</string>
+		<string>../../../../github</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/chilininsd/operating_systems.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>8A0C68DD-9F4A-4BC1-976D-0B1FE2C46682</string>
+	<string>54F038481CEF8CE60D491ED0CC74C49FF371D5E6</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -35,6 +39,14 @@
 			<string>8A0C68DD-9F4A-4BC1-976D-0B1FE2C46682</string>
 			<key>IDESourceControlWCCName</key>
 			<string>github</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>54F038481CEF8CE60D491ED0CC74C49FF371D5E6</string>
+			<key>IDESourceControlWCCName</key>
+			<string>p1</string>
 		</dict>
 	</array>
 </dict>

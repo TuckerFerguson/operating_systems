@@ -1,12 +1,14 @@
-INSTALL=..
-LIBS=$(INSTALL)/lib/* -lgenericList -lreadline -lncurses
+LIBS=-lgenericList -lreadline -lncurses
 LFLAGS=-L$(LIBS)
 CC=gcc
-CFLAGS=-g -Wall 
+CFLAGS=-v -g -Wall
 
-PROGS=test-readline loop 
+PROGS=shell
 
 all: $(PROGS) dox
+
+shell: shell.o
+	$(CC) $(CFLAGS) -o $@  $< $(LIBS)
 
 loop: loop.o
 	$(CC) $(CFLAGS) -o $@  $<
