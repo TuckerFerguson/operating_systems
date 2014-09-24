@@ -15,20 +15,22 @@
 
 int main(void)
 {
-	char	buf[MAXLINE];
+	char *line;
+	char *prompt = "dash>";
 	pid_t	pid;
 	int		status;
 
-	printf("%% ");	/* print prompt (printf requires %% to print %) */
-	while (fgets(buf, MAXLINE, stdin) != NULL) {
-		buf[strlen(buf) - 1] = '\0';	/* replace newline with null */
+	using_history();
+	while ((line=readline(prompt))) {
+		printf("%s\n",line);
+		add_history(line);
 
 		if ( (pid = fork()) < 0)
 			err_sys("fork error");
 
 		else if (pid == 0) {		/* child */
-			execlp(buf, buf, (char *) 0);
-			err_ret("couldn't execute: %s", buf);
+			execlp(line, line, (char *) 0);
+			err_ret("couldn't execute: %s", line);
 			exit(EXIT_FAILURE);
 		}
 
@@ -36,6 +38,7 @@ int main(void)
 		if ( (pid = waitpid(pid, &status, 0)) < 0)
 			err_sys("waitpid error");
 		printf("%% ");
+		free(line);
 	}
 	exit(EXIT_SUCCESS);
 }
