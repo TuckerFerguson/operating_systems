@@ -1,0 +1,13 @@
+gcc -g -Wall   -c -o shell.o shell.c
+In file included from shell.c:14:
+./ourhdr.h:65:45: warning: declaration of 'struct termios' will not be visible outside of this function [-Wvisibility]
+pid_t    pty_fork(int *, char *, const struct termios *,
+                                              ^
+shell.c:32:23: error: too many arguments to function call, expected 2, have 3
+                        execvp(line, line, (char *) 0);
+                        ~~~~~~             ^~~~~~~~~~
+/usr/include/unistd.h:440:1: note: 'execvp' declared here
+int      execvp(const char *, char * const *);
+^
+1 warning and 1 error generated.
+make: *** [shell.o] Error 1
