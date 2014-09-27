@@ -4,7 +4,6 @@ INCLUDE=$(INSTALL)/include
 CC=gcc
 CFLAGS=-Wall -g -fPIC -shared -I$(INCLUDE)/
 LFLAGS=-L$(LIB) -lgenericList
-LD=clang
 
 LIBOBJS=List.o Node.o
 

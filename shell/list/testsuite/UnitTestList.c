@@ -68,8 +68,6 @@ Boolean addAtFrontWithNoNodes()
 	myassert(testlist->tail == node)
 	myassert(testlist->head->next == NULL)
 	myassert(testlist->head->prev == NULL)
-    
-    freeNode(node, freeObject);
 
 	return TRUE;
 }

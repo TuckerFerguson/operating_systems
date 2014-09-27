@@ -2,21 +2,21 @@
 <configurationDescriptor version="95">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root="src" name="0">
-      <df name="list">
-        <in>List.c</in>
-        <in>List.h</in>
-        <in>Node.c</in>
-        <in>Node.h</in>
-        <in>common.h</in>
-      </df>
       <in>CommandParser.c</in>
       <in>CommandParser.h</in>
+      <in>DirectoryTraverser.c</in>
+      <in>DirectoryTraverser.h</in>
+      <in>Job.c</in>
+      <in>Job.h</in>
+      <in>JobManager.c</in>
+      <in>JobManager.h</in>
       <in>TestCommandParser.c</in>
       <in>common.h</in>
       <in>error.c</in>
       <in>loop.c</in>
       <in>ourhdr.h</in>
       <in>shell.c</in>
+      <in>shell.h</in>
       <in>test-readline.c</in>
     </df>
   </logicalFolder>
@@ -49,6 +49,7 @@
         </gdb_signals>
         <gdb_options>
           <DebugOptions>
+            <option name="gdb_detach_on_fork" value="off"/>
           </DebugOptions>
         </gdb_options>
         <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>

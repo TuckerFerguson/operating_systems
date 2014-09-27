@@ -9,8 +9,6 @@ PROGS=RandomTestList SimpleTestList UnitTestList
 
 all: $(PROGS)
 
-
-
 RandomTestList: RandomTestList.o Object.o
 	$(CC) $(CFLAGS) -o $@ $^  $(LFLAGS)
 

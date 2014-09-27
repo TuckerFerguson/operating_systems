@@ -52,38 +52,16 @@ Boolean simpleCommandWithOneArgParse()
     char* constString = "test -a";
     char* commandWithOneArg = (char*)malloc(strlen(constString)+1 * sizeof(char));
     strcpy(commandWithOneArg, constString);
-    char* command = get_command(commandWithOneArg);
-    char** args = get_arguments(commandWithOneArg);
-    
-    myassert(!strcmp(command, "test"))
-    myassert(!strcmp(args[0], "-a"))
+    char** command = get_tokenized_command(commandWithOneArg);
+        
+    myassert(!strcmp(command[0], "test"))
+    myassert(!strcmp(command[1], "-a"))
             
     free(commandWithOneArg);
-    free(command);
     int i;
-    for (i = 0; i< 2048; i++)
-        free(args[i]);
-    free(args);
-    return TRUE;
-}
-
-Boolean simpleCommandWithOneArgParse()
-{
-    char* constString = "test -a";
-    char* commandWithOneArg = (char*)malloc(strlen(constString)+1 * sizeof(char));
-    strcpy(commandWithOneArg, constString);
-    char* command = get_command(commandWithOneArg);
-    char** args = get_arguments(commandWithOneArg);
-    
-    myassert(!strcmp(command, "test"))
-    myassert(!strcmp(args[0], "-a"))
-            
-    free(commandWithOneArg);
+    for (i = 0; i< 2049; i++)
+        free(command[i]);
     free(command);
-    int i;
-    for (i = 0; i< 2048; i++)
-        free(args[i]);
-    free(args);
     return TRUE;
 }
 

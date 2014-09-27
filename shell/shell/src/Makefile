@@ -1,14 +1,16 @@
-LIBS=-lgenericList -lreadline -lncurses
-LFLAGS=-L$(LIBS)
+INSTALL=..
+INCLUDE=$(INSTALL)/include -I.
+LIBS=$(INSTALL)/lib -lreadline -lncurses
+LFLAGS=-L$(LIBS) -lgenericList
 CC=gcc
-CFLAGS=-g -Wall
+CFLAGS=-Wall -g -DDEBUG -I$(INCLUDE)
 
-PROGS=shell commandparser
+PROGS=shell 
 
 all: $(PROGS) 
 
-shell: shell.o error.o
-	$(CC) $(CFLAGS) -o $@ shell.o error.o $(LIBS)
+shell: shell.o error.o CommandParser.o Job.o DirectoryTraverser.o JobManager.o
+	$(CC) $(CFLAGS) -o $@ shell.o error.o CommandParser.o Job.o DirectoryTraverser.o JobManager.o $(LFLAGS)
 
 commandparser: CommandParser.o TestCommandParser.o
 	$(CC) $(CFLAGS) -o $@ CommandParser.o TestCommandParser.o
