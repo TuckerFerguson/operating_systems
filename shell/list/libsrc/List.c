@@ -331,19 +331,14 @@ void printList(ListPtr L)
  */
 static void print(NodePtr node, char * (*toString)(const void *))
 {
-	int count = 0;
 	char *output;
     NodePtr temp = node;
 	while (temp) {
 		output = (*toString)(temp->data);
-		printf(" %s -->",output);
+		printf(" %s \n",output);
 		free(output);
 		temp = temp->next;
-		count++;
-		if ((count % 6) == 0)
-			printf("\n");
 	}
-    printf(" NULL \n");
 }
 
 

@@ -11,6 +11,7 @@
       <in>JobManager.c</in>
       <in>JobManager.h</in>
       <in>TestCommandParser.c</in>
+      <in>TestJobManager.c</in>
       <in>common.h</in>
       <in>error.c</in>
       <in>loop.c</in>

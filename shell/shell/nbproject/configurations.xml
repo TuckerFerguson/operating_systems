@@ -7,6 +7,7 @@
       <in>Job.c</in>
       <in>JobManager.c</in>
       <in>TestCommandParser.c</in>
+      <in>TestJobManager.c</in>
       <in>error.c</in>
       <in>shell.c</in>
     </df>
@@ -87,6 +88,17 @@
         </cTool>
       </item>
       <item path="src/TestCommandParser.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="src/TestJobManager.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>DEBUG</Elem>
+          </preprocessorList>
+        </cTool>
       </item>
       <item path="src/error.c" ex="false" tool="0" flavor2="2">
         <cTool flags="0">
