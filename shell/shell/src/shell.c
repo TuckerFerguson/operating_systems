@@ -9,12 +9,15 @@ int main(void) {
     int status;
     regex_t contains_word;
     int contains_commands;
+    int index_of_ampersand;
     
     if (!(prompt = getenv("DASH_PROMPT")))
     {
         prompt = "dash> ";
         fprintf(stderr, "DASH_PROMPT not set, using default prompt of dash>\n");
     }
+    
+    init_job_manager();
         
     contains_commands = regcomp(&contains_word, "[\\w]*", 0);
     if (contains_commands)
@@ -39,15 +42,31 @@ int main(void) {
         if (handle_parent_commands(tokenized_command_and_args))
             continue;
         
-        //if our fork fails, bail out
+        //determine whether or not to wait for the child
+        index_of_ampersand = is_background_job(tokenized_command_and_args);
+        
+        //fork
         if ((pid = fork()) < 0)
             err_sys("fork error");
-
         else if (pid == 0)
-            start_job(line, tokenized_command_and_args);
-        
-        if ((pid = waitpid(pid, &status, 0)) < 0)
-            err_sys("waitpid error");
+        {
+            if (index_of_ampersand >= 0)
+                start_background_job(line, tokenized_command_and_args, index_of_ampersand);
+            else
+                start_job(line, tokenized_command_and_args);
+        }
+         
+        //not a background job, wait for the child
+        if (index_of_ampersand < 0)
+        {
+            pid = waitpid(pid, &status, 0);
+            if (!pid)
+                err_sys("waitpid error");
+        }
+        else
+        {
+            log_background_job(pid, line);
+        }
         
         free(line);
     }
@@ -72,6 +91,11 @@ int handle_parent_commands(char** command_and_args)
     else if (strstr(command, "exit"))
     {
         kill(getpid(), SIGKILL);
+    }
+    else if (strstr(command, "jobs"))
+    {
+        print_jobs();
+        return 1;
     }
     return 0;
 }

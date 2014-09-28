@@ -10,14 +10,17 @@
 #include "Job.h"
 #include "ourhdr.h"
 #include "unistd.h"
+#include "CommandParser.h"
 
 #ifndef JOBMANAGER_H
 #define	JOBMANAGER_H
 
-Boolean is_background_job(char**);
-Boolean start_background_job(char**);
+int is_background_job(char**);
+void start_background_job(char*, char**, int);
 void start_job(char*, char**);
 void print_jobs();
+void init_job_manager();
+void log_background_job(int, char*);
 
 #endif	/* JOBMANAGER_H */
 

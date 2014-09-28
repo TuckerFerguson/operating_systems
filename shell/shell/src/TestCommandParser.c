@@ -47,7 +47,7 @@ void afterTest(char* testName, Boolean result)
 	passCount += result;
 }
 
-Boolean simpleCommandWithOneArgParse()
+Boolean conjoinedBackgroundJob()
 {
     char* constString = "test -a";
     char* commandWithOneArg = (char*)malloc(strlen(constString)+1 * sizeof(char));
@@ -72,7 +72,7 @@ void runUnitTests()
 
 	testName = "simpleCommandWithOneArgParse";
 	beforeTest(testName);
-	result = simpleCommandWithOneArgParse();
+	result = conjoinedBackgroundJob();
 	afterTest(testName, result);
 
 	fprintf(stdout, "Test Cases: %d\n",  testCount);

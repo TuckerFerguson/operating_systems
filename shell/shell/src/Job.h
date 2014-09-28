@@ -29,5 +29,6 @@ JobPtr createJob (const int, const char *, const int);
 char *toString(const void *);
 void freeJob(const void *);
 int compareTo(const void *,const void *);
+void job_creation_printout(JobPtr);
 
 #endif /* __JOB_H */

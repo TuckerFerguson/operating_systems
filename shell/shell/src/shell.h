@@ -16,7 +16,7 @@
 
 #ifndef SHELL_H
 #define	SHELL_H
-int handle_special_command(char**);
+
 int handle_parent_commands(char**);
 
 #endif	/* SHELL_H */
