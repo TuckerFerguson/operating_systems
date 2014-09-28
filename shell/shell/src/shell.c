@@ -25,18 +25,23 @@ int main(void) {
 
     using_history();
     while ((line = readline(prompt))) {
-
-        add_history(line);
+        
         char** tokenized_command_and_args = get_tokenized_command(line);
         
         //user hit enter
         if (tokenized_command_and_args[0] == NULL)
+        {
+            update_completed_jobs();
+            print_jobs();
             continue;
-
+        }
+            
         //if command was only whitespace, get another        
         contains_commands = regexec(&contains_word, line, 0, NULL, 0);
         if (contains_commands == REG_NOMATCH) 
             continue;
+        
+        add_history(line);
         
         //if the parent handled this command, get another
         if (handle_parent_commands(tokenized_command_and_args))
@@ -54,7 +59,13 @@ int main(void) {
                 start_background_job(line, tokenized_command_and_args, index_of_ampersand);
             else
                 start_job(line, tokenized_command_and_args);
+            exit(1);
         }
+        
+//        printf("Was process killed? %s\n", was_process_killed(pid) == FALSE ? "False" :  "True");
+        
+//        if (was_process_killed(pid))
+//            continue;
          
         //not a background job, wait for the child
         if (index_of_ampersand < 0)
@@ -63,7 +74,7 @@ int main(void) {
             if (!pid)
                 err_sys("waitpid error");
         }
-        else
+        else 
         {
             log_background_job(pid, line);
         }
