@@ -1,3 +1,33 @@
+commit 3e22f7205b46d1da87a69f0312c334d80ad71ce5
+Author: Reuben Tanner <reuben@localhost.localdomain>
+Date:   Mon Sep 29 14:55:28 2014 -0600
+
+    another folder doesn't commit if there isnt anything in it
+
+commit b0654558fa82761aa6aa44ff3f6c704f288a4c60
+Author: Reuben Tanner <reuben@localhost.localdomain>
+Date:   Mon Sep 29 14:54:00 2014 -0600
+
+    folder is missing after clean
+
+commit 7958d6aae78ae26b16b1f833c18349f5955380cb
+Author: Reuben Tanner <reuben@localhost.localdomain>
+Date:   Mon Sep 29 14:51:07 2014 -0600
+
+    one modification to README
+
+commit 6aa02d72ae739359412512492816caac07553cce
+Author: Reuben Tanner <reuben@localhost.localdomain>
+Date:   Mon Sep 29 14:48:39 2014 -0600
+
+    making one change to ld library path script
+
+commit 0820b1c3d70ee71273da82f328bac68a08614606
+Author: Reuben Tanner <reuben@localhost.localdomain>
+Date:   Mon Sep 29 14:46:06 2014 -0600
+
+    updating version and adding log
+
 commit c564a50047a875c03d2894467eb267e0146581a1
 Author: Reuben Tanner <reuben@localhost.localdomain>
 Date:   Mon Sep 29 14:42:18 2014 -0600
