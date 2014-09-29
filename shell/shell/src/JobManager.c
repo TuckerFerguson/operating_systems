@@ -88,9 +88,9 @@ int process_state(int pid)
 int exit_status(int pid)
 {
     int status;
-    waitpid(pid, &status, WUNTRACED);
+    int child_pid = waitpid(pid, &status, WUNTRACED);
 //    signal_debugging(pid, status);
-    if (WEXITSTATUS(status) || WIFSIGNALED(status)) // && WTERMSIG(status) <= SIGUNUSED && WTERMSIG(status) >= SIGHUP))
+    if (!child_pid && (WEXITSTATUS(status) || WIFSIGNALED(status))) // && WTERMSIG(status) <= SIGUNUSED && WTERMSIG(status) >= SIGHUP))
         return PROBLEM;
     else
         return NORMAL;

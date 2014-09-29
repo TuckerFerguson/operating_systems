@@ -12,6 +12,9 @@
 #ifndef SHELL_H
 #define	SHELL_H
 
+#define MAX_PIPE_LENGTH 4096
+#define FAIL "FAIL"
+
 /**
  * Handles any commmands that the parent is required to take care of
  * @param - the tokenized command

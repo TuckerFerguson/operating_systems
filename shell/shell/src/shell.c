@@ -11,6 +11,11 @@ int main(int argc, char** argv) {
     regex_t contains_word;
     int contains_commands;
     int index_of_ampersand;
+    int	pipe_parent[2];
+    char child_status[MAXLINE];
+    
+//    if (pipe(pipe_parent) < 0)
+//		err_sys("pipe error");
     
     if (argc == 2 && strstr(argv[1], "-v"))
     {
@@ -33,6 +38,9 @@ int main(int argc, char** argv) {
     using_history();
     while ((line = readline(prompt))) {
         
+        if (pipe(pipe_parent) < 0)
+            err_sys("pipe error");
+            
         char** tokenized_command_and_args = get_tokenized_command(line);
         
         //user hit enter
@@ -61,7 +69,7 @@ int main(int argc, char** argv) {
             continue;
         }
         
-        //determine whether or not to wait for the child
+        //determine whether or not to wait f    or the child
         index_of_ampersand = is_background_job(tokenized_command_and_args);
         
         //fork
@@ -69,13 +77,21 @@ int main(int argc, char** argv) {
             err_sys("fork error");
         else if (pid == 0)
         {
+            close(pipe_parent[0]);
             if (index_of_ampersand >= 0)
+            {
                 start_background_job(line, tokenized_command_and_args, index_of_ampersand);
+                write(pipe_parent[1], FAIL, strlen(FAIL)+1);
+                //give write time to propagate
+                usleep(1000);
+            }
             else
+            {
                 start_job(line, tokenized_command_and_args);
+            }
             exit(EXIT_FAILURE);
         }
-
+        
         //not a background job, wait for the child
         if (index_of_ampersand < 0)
         {
@@ -85,9 +101,18 @@ int main(int argc, char** argv) {
         }
         else 
         {
-            log_background_job(pid, line);
-        }
-        
+            //give the process time to start -- this is the minimum amount that I've found that works, even usleep(900000) didn't work
+            sleep(1);
+            if (!process_state(pid))
+                read(pipe_parent[0], child_status, MAXLINE);
+
+            if (!strstr(child_status, FAIL))
+                log_background_job(pid, line);
+            
+            int i;
+            for (i=0; i<MAXLINE; i++) child_status[i] = 0;    
+        }            
+
 //        free_command_and_Line(line, tokenized_command_and_args);
     }
     regfree(&contains_word);
