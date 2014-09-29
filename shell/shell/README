@@ -34,7 +34,7 @@ VALGRIND EXPERIENCE:
 Tried for a while, had too many random segfaults that I didn't want to look into so I gave up... -10.
 
 DESIGN:
-I have decided to organize my functions by relation into files with semi-descriptive names e.g. all functions used for manipulating jobs or checking on status' of processes are in a file named JobManager.c. I've endeavored to make the main routine of the shell as clear and clean as possible by making operations modular and simple.
+I have decided to organize my functions by relation into files with semi-descriptive names e.g. all functions used for manipulating jobs or checking on status' of processes are in a file named JobManager.c. All operations involving command parsing are located in CommandParser.c, all operations related to directory traversal are found in DirectoryTraverser.c etc. I've endeavored to make the main routine of the shell as clear and clean as possible by making operations modular and simple.
 
 I plan on testing the shell by learning, modifying and using the test-harness that you've provided
 
