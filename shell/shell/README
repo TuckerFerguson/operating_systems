@@ -44,6 +44,59 @@ Most of the functions in the files have been unit tested to ensure their functio
 KNOWN BUGS:
 The exit status of a process is not accurate...I have no idea what needs to be changed but I fiddled with it for hours and didn't get it doing anything consistent. At times, all processes (even ones killed by kill -9) will report that exit with status 0 and that they have not been signaled. At other times, processes that exit normal will say that they have been signaled by signals way outside the range of [1,31] leading to no end of confusion on my part.
 
-If an invalid background task is entered, enter or jobs is hit to display its status and then IMMEDIATELY (like < .10s) you hit enter again the program wil segfault. That's the only case
+If an invalid background task is entered, enter or jobs is hit to display its status and then IMMEDIATELY (like < .10s) you hit enter again the program will segfault. That's the only case
+
+line = readline(prompt) fails if the line is only spaces
 
 Leaking memory ALL OVER! :-(
+
+TEST CASES:
+normal execution
+	only whitespace -- fails in readline library
+	valid command -- success
+	valid command with 1 valid argument -- success
+	valid command with 1 invalid argument -- success
+	valid command with several valid arguments -- sucess
+	valid command with several invalid arguments -- success
+	valid command with mixed invalid and valid arguments - success
+	invalid command -- success
+	invalid command with 1 invalid argument - success
+	invalid command with several invalid arguments - success
+	
+background jobs
+	conjoined & and separated & for both valid and invalid commands -- success
+	only whitespace with & -- success
+	valid command -- success
+	valid command with 1 valid argument - success
+	valid command with 1 invalid argument - success
+	valid command with several valid arguments - success
+	valid command with several invalid arguments -- success
+	valid command with mixed invalid and valid arguments - success
+	invalid command - sucess
+	invalid command with 1 invalid argument - susceptible to race condition but successful most of the time
+	invalid command with several invalid arguments - susceptible to race condition but successful most of the time
+	
+cd
+	with no arguments - success
+	with . - success
+	with .. - success
+	with -  - success
+	with ~ - success
+	with invalid argument - success
+	as a background job - success
+
+exit
+	with argument - success
+	as a background job - success
+
+jobs/enter
+	pyramid completion times - success
+	all stopping at the same time - success
+	very short background job - success
+	start short and long jobs interleaved -- success
+
+version
+	
+prompt
+	have no DASH_PROMPT set
+	unset DASH_PROMPT during execution

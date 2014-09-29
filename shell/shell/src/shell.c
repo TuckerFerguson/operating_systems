@@ -38,28 +38,20 @@ int main(int argc, char** argv) {
         
         if (pipe(error_pipe) < 0)
             err_sys("pipe error");
-            
-        char** tokenized_command_and_args = get_tokenized_command(line);
-        //user hit enter
-        if (tokenized_command_and_args[0] == NULL)
+        
+        if (strlen(line) == 0)
         {
+            free(line);
             display_updated_jobs();
-//            free_command_and_Line(line, tokenized_command_and_args);
-            continue;
-        }
-            
-        //if command was only whitespace, get another        
-        contains_commands = regexec(&contains_word, line, 0, NULL, 0);
-        if (contains_commands == REG_NOMATCH)
-        {
-//            free_command_and_Line(line, tokenized_command_and_args);
             continue;
         }
         
+        char** tokenized_command_and_args = get_tokenized_command(line);
+            
         add_history(line);
         
         //if the parent handled this command, get another
-        if (handle_parent_commands(tokenized_command_and_args))
+        if (handle_parent_commands(line, tokenized_command_and_args))
         {
 //            free_command_and_Line(line, tokenized_command_and_args);
             continue;
@@ -85,6 +77,7 @@ int main(int argc, char** argv) {
             {
                 start_job(line, tokenized_command_and_args);
             }
+//            free_command_and_Line(line, tokenized_command_and_args);
             exit(EXIT_FAILURE);
         }
         
@@ -116,7 +109,7 @@ int main(int argc, char** argv) {
     exit(EXIT_SUCCESS);
 }
 
-int handle_parent_commands(char** command_and_args)
+int handle_parent_commands(char*line, char** command_and_args)
 {
     char* command = command_and_args[0];
     
@@ -133,6 +126,7 @@ int handle_parent_commands(char** command_and_args)
     else if (strstr(command, "exit"))
     {
         free_jobs();
+        free_command_and_Line(line, command_and_args);
         kill(getpid(), SIGKILL);
     }
     else if (strstr(command, "jobs"))

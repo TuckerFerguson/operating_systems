@@ -20,7 +20,9 @@ Boolean start_background_job(char* line, char** tokenized_command_and_args, int 
 
 void log_background_job(int pid, char* line)
 {
-    Job* job = createJob(pid, line, ++job_identity);
+    char* copy = (char*)malloc(strlen(line) + 1 *sizeof(char));
+    strcpy(copy, line);
+    Job* job = createJob(pid, copy, ++job_identity);
     Node* node = createNode(job);
     addAtRear(jobs, node);
     job_creation_printout(job);
@@ -119,7 +121,7 @@ void remove_completed_jobs()
         if (job->job_state == COMPLETE)
         {
             Node* copy = traversal_node->next;
-            removeNode(jobs, traversal_node);
+            freeNode(removeNode(jobs, traversal_node), freeJob);
             traversal_node = copy;
         }
         else

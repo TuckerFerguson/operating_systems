@@ -17,10 +17,11 @@
 
 /**
  * Handles any commmands that the parent is required to take care of
+ * @param - the line entered into the shell
  * @param - the tokenized command
  * @return - nonzero if the parent handled the command passed
  */
-int handle_parent_commands(char**);
+int handle_parent_commands(char*, char**);
 
 #endif	/* SHELL_H */
 
