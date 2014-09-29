@@ -48,15 +48,12 @@ void print_jobs()
 
 void update_completed_jobs()
 {
-//    int status;
     Node* traversal_node = jobs->head;
-    
     if (traversal_node == NULL) return;
     
     do 
     {
         Job* job = (Job*)(traversal_node->data);
-//        printf("Check if job with %d pid is done\n", job->pid);
         
         job->job_state = process_state(job->pid);
         if (job->job_state == COMPLETE)
@@ -67,6 +64,7 @@ void update_completed_jobs()
 
 void signal_debugging(int pid, int status) 
 {
+    printf("Errno: %d\n", errno);
     if (WIFEXITED(status))
         printf("process %d exited with status %d\n", pid, WEXITSTATUS(status));
     if (WIFSIGNALED(status))
@@ -89,7 +87,15 @@ int exit_status(int pid)
 {
     int status;
     int child_pid = waitpid(pid, &status, WUNTRACED);
-//    signal_debugging(pid, status);
+//    signal_debugging(child_pid, status);
+    
+    //it was either a short background job or the job was killed
+    /*
+     This is inaccurate...I can't differentiate between a short background job that completed normally and one that was signaled
+     in both cases errno says i have no child processes
+     */
+    if (child_pid == -1 && errno == ECHILD)
+        return NORMAL;
     if (!child_pid && (WEXITSTATUS(status) || WIFSIGNALED(status))) // && WTERMSIG(status) <= SIGUNUSED && WTERMSIG(status) >= SIGHUP))
         return PROBLEM;
     else
@@ -99,4 +105,29 @@ int exit_status(int pid)
 void free_jobs()
 {
     freeList(jobs);
+}
+
+void remove_completed_jobs()
+{
+    Node* traversal_node = jobs->head;
+    if (traversal_node == NULL) return;
+    
+    while (traversal_node != NULL)
+    {
+        Job* job = (Job*)(traversal_node->data);
+        
+        if (job->job_state == COMPLETE)
+        {
+            Node* copy = traversal_node->next;
+            removeNode(jobs, traversal_node);
+            traversal_node = copy;
+        }
+        else
+        {
+            traversal_node = traversal_node->next;
+        }
+    }
+    
+    if (jobs->size == 0) 
+        job_identity = 0;
 }

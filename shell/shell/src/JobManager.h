@@ -14,6 +14,7 @@
 #include "wait.h"
 #include "sys/stat.h"
 #include "sys/types.h"
+#include "errno.h"
 
 #ifndef JOBMANAGER_H
 #define	JOBMANAGER_H
@@ -53,6 +54,12 @@ void log_background_job(int, char*);
  * Goes through the job list and determines the status of the processes and updates their state accorindgly
  */
 void update_completed_jobs();
+/**
+ * Removes any completed jobs from the list, also appropriately resets the job id
+ * @param 
+ * @return 
+ */
+void remove_completed_jobs();
 /**
  * Determines if the process is running or not
  * @param - the pid of the process

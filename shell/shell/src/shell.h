@@ -24,4 +24,4 @@ int handle_parent_commands(char**);
 
 #endif	/* SHELL_H */
 
-#define VERSION_NUMBER "5eeb7bb20ad7d47c7d763139dbde26c288e3a8ce"
+#define VERSION_NUMBER "0a2d33eb0f08eba0986fd328d5c1763e95f136d2"
