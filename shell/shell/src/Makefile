@@ -17,12 +17,9 @@ commandparser: CommandParser.o TestCommandParser.o
 	
 jobmanager: JobManager.o TestJobManager.o CommandParser.o error.o Job.o
 	$(CC) $(CFLAGS) -o $@ JobManager.o TestJobManager.o CommandParser.o error.o Job.o $(LFLAGS)
-
-loop: loop.o
-	$(CC) $(CFLAGS) -o $@  $<
-
-test-readline: test-readline.o
-	$(CC) $(CFLAGS) -o $@  $< $(LIBS)
+	
+version:
+	cd src;./set_git_version.sh;
 
 dox:
 	echo "Generating documentation using doxygen..."

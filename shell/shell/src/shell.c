@@ -1,8 +1,9 @@
 #include "shell.h"
 
 void print_command_and_args(char**);
+void free_command_and_Line(char*, char**);
 
-int main(void) {
+int main(int argc, char** argv) {
     char *line;
     char* prompt;
     pid_t pid;
@@ -10,6 +11,12 @@ int main(void) {
     regex_t contains_word;
     int contains_commands;
     int index_of_ampersand;
+    
+    if (argc == 2 && strstr(argv[1], "-v"))
+    {
+        printf("Current version: %s\n", VERSION_NUMBER);
+        exit(EXIT_SUCCESS);
+    }
     
     if (!(prompt = getenv("DASH_PROMPT")))
     {
