@@ -1,0 +1,95 @@
+\hypertarget{CommandParser_8h}{\section{Command\-Parser.\-h File Reference}
+\label{CommandParser_8h}\index{Command\-Parser.\-h@{Command\-Parser.\-h}}
+}
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$common.\-h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{CommandParser_8h_afe6dfe32319d90c392c0935586188ae4}{M\-A\-X\-\_\-\-S\-H\-E\-L\-L\-\_\-\-A\-R\-G\-U\-M\-E\-N\-T\-S}~2049
+\begin{DoxyCompactList}\small\item\em \hyperlink{CommandParser_8h}{Command\-Parser.\-h}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$$\ast$ \hyperlink{CommandParser_8h_aaf857b3f1cd140b39c189ec4b960b9a8}{get\-\_\-tokenized\-\_\-command} (char $\ast$)
+\begin{DoxyCompactList}\small\item\em Tokenizes the line of input provided to the shell. \end{DoxyCompactList}\item 
+int \hyperlink{CommandParser_8h_aa63a4aa491bd16a01ad659b3a308659e}{is\-\_\-background\-\_\-job} (char $\ast$$\ast$)
+\begin{DoxyCompactList}\small\item\em Determines if the line entered into the shell should be interpreted as a background command. \end{DoxyCompactList}\item 
+void \hyperlink{CommandParser_8h_aebbb15b17eda2ab4bf631d6e1f5ef7be}{remove\-\_\-ampersand} (char $\ast$$\ast$, int)
+\begin{DoxyCompactList}\small\item\em Removes the ampersand from the token at the given index 2d array of strings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{CommandParser_8h_afe6dfe32319d90c392c0935586188ae4}{\index{Command\-Parser.\-h@{Command\-Parser.\-h}!M\-A\-X\-\_\-\-S\-H\-E\-L\-L\-\_\-\-A\-R\-G\-U\-M\-E\-N\-T\-S@{M\-A\-X\-\_\-\-S\-H\-E\-L\-L\-\_\-\-A\-R\-G\-U\-M\-E\-N\-T\-S}}
+\index{M\-A\-X\-\_\-\-S\-H\-E\-L\-L\-\_\-\-A\-R\-G\-U\-M\-E\-N\-T\-S@{M\-A\-X\-\_\-\-S\-H\-E\-L\-L\-\_\-\-A\-R\-G\-U\-M\-E\-N\-T\-S}!CommandParser.h@{Command\-Parser.\-h}}
+\subsubsection[{M\-A\-X\-\_\-\-S\-H\-E\-L\-L\-\_\-\-A\-R\-G\-U\-M\-E\-N\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-S\-H\-E\-L\-L\-\_\-\-A\-R\-G\-U\-M\-E\-N\-T\-S~2049}}\label{CommandParser_8h_afe6dfe32319d90c392c0935586188ae4}
+
+
+\hyperlink{CommandParser_8h}{Command\-Parser.\-h}. 
+
+This set of functions is useful for manipulating the lines entered by the user; 
+\begin{DoxyParams}{Parameters}
+{\em @return} & The maximum amount of tokens accepted in a line of input to the shell \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Function Documentation}
+\hypertarget{CommandParser_8h_aaf857b3f1cd140b39c189ec4b960b9a8}{\index{Command\-Parser.\-h@{Command\-Parser.\-h}!get\-\_\-tokenized\-\_\-command@{get\-\_\-tokenized\-\_\-command}}
+\index{get\-\_\-tokenized\-\_\-command@{get\-\_\-tokenized\-\_\-command}!CommandParser.h@{Command\-Parser.\-h}}
+\subsubsection[{get\-\_\-tokenized\-\_\-command}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$$\ast$ get\-\_\-tokenized\-\_\-command (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{CommandParser_8h_aaf857b3f1cd140b39c189ec4b960b9a8}
+
+
+Tokenizes the line of input provided to the shell. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & The line entered into the shell \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ a 2d array of strings which represent the command tokenized 
+\end{DoxyReturn}
+\hypertarget{CommandParser_8h_aa63a4aa491bd16a01ad659b3a308659e}{\index{Command\-Parser.\-h@{Command\-Parser.\-h}!is\-\_\-background\-\_\-job@{is\-\_\-background\-\_\-job}}
+\index{is\-\_\-background\-\_\-job@{is\-\_\-background\-\_\-job}!CommandParser.h@{Command\-Parser.\-h}}
+\subsubsection[{is\-\_\-background\-\_\-job}]{\setlength{\rightskip}{0pt plus 5cm}int is\-\_\-background\-\_\-job (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{CommandParser_8h_aa63a4aa491bd16a01ad659b3a308659e}
+
+
+Determines if the line entered into the shell should be interpreted as a background command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & a 2d array of strings which represent the command toknized (the result from get\-\_\-tokenized\-\_\-command) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ the index of the token in which the ampersand is present 
+\end{DoxyReturn}
+\hypertarget{CommandParser_8h_aebbb15b17eda2ab4bf631d6e1f5ef7be}{\index{Command\-Parser.\-h@{Command\-Parser.\-h}!remove\-\_\-ampersand@{remove\-\_\-ampersand}}
+\index{remove\-\_\-ampersand@{remove\-\_\-ampersand}!CommandParser.h@{Command\-Parser.\-h}}
+\subsubsection[{remove\-\_\-ampersand}]{\setlength{\rightskip}{0pt plus 5cm}void remove\-\_\-ampersand (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{, }
+\item[{int}]{}
+\end{DoxyParamCaption}
+)}}\label{CommandParser_8h_aebbb15b17eda2ab4bf631d6e1f5ef7be}
+
+
+Removes the ampersand from the token at the given index 2d array of strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & The 2d array of strings representing the command tokenized \\
+\hline
+{\em -\/} & the index at which the ampersand exists \\
+\hline
+\end{DoxyParams}

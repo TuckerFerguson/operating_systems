@@ -1,0 +1,72 @@
+\hypertarget{DirectoryTraverser_8h}{\section{Directory\-Traverser.\-h File Reference}
+\label{DirectoryTraverser_8h}\index{Directory\-Traverser.\-h@{Directory\-Traverser.\-h}}
+}
+{\ttfamily \#include \char`\"{}errno.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ourhdr.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}stdio.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pwd.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}unistd.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{DirectoryTraverser_8h_ab97da706199e3ac53010feb192459cc8}{M\-A\-X\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y\-\_\-\-S\-I\-Z\-E}~1024
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{DirectoryTraverser_8h_a0d4cc50108cc01706453444f82085f2b}{get\-\_\-current\-\_\-directory} ()
+\begin{DoxyCompactList}\small\item\em Gets the current directory. \end{DoxyCompactList}\item 
+void \hyperlink{DirectoryTraverser_8h_aa714e5351c145e2618f6f4e4c514500b}{change\-\_\-to\-\_\-directory} (char $\ast$)
+\begin{DoxyCompactList}\small\item\em Changes to the directory specified by the parameter. \end{DoxyCompactList}\item 
+void \hyperlink{DirectoryTraverser_8h_a8133281eac01eea345438ebc24eb88db}{change\-\_\-to\-\_\-home\-\_\-directory} ()
+\begin{DoxyCompactList}\small\item\em Changes to the users' home directory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{DirectoryTraverser_8h_ab97da706199e3ac53010feb192459cc8}{\index{Directory\-Traverser.\-h@{Directory\-Traverser.\-h}!M\-A\-X\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y\-\_\-\-S\-I\-Z\-E@{M\-A\-X\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y\-\_\-\-S\-I\-Z\-E}}
+\index{M\-A\-X\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y\-\_\-\-S\-I\-Z\-E@{M\-A\-X\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y\-\_\-\-S\-I\-Z\-E}!DirectoryTraverser.h@{Directory\-Traverser.\-h}}
+\subsubsection[{M\-A\-X\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y\-\_\-\-S\-I\-Z\-E~1024}}\label{DirectoryTraverser_8h_ab97da706199e3ac53010feb192459cc8}
+
+
+\subsection{Function Documentation}
+\hypertarget{DirectoryTraverser_8h_aa714e5351c145e2618f6f4e4c514500b}{\index{Directory\-Traverser.\-h@{Directory\-Traverser.\-h}!change\-\_\-to\-\_\-directory@{change\-\_\-to\-\_\-directory}}
+\index{change\-\_\-to\-\_\-directory@{change\-\_\-to\-\_\-directory}!DirectoryTraverser.h@{Directory\-Traverser.\-h}}
+\subsubsection[{change\-\_\-to\-\_\-directory}]{\setlength{\rightskip}{0pt plus 5cm}void change\-\_\-to\-\_\-directory (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{DirectoryTraverser_8h_aa714e5351c145e2618f6f4e4c514500b}
+
+
+Changes to the directory specified by the parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & the directory to change to \\
+\hline
+\end{DoxyParams}
+\hypertarget{DirectoryTraverser_8h_a8133281eac01eea345438ebc24eb88db}{\index{Directory\-Traverser.\-h@{Directory\-Traverser.\-h}!change\-\_\-to\-\_\-home\-\_\-directory@{change\-\_\-to\-\_\-home\-\_\-directory}}
+\index{change\-\_\-to\-\_\-home\-\_\-directory@{change\-\_\-to\-\_\-home\-\_\-directory}!DirectoryTraverser.h@{Directory\-Traverser.\-h}}
+\subsubsection[{change\-\_\-to\-\_\-home\-\_\-directory}]{\setlength{\rightskip}{0pt plus 5cm}void change\-\_\-to\-\_\-home\-\_\-directory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{DirectoryTraverser_8h_a8133281eac01eea345438ebc24eb88db}
+
+
+Changes to the users' home directory. 
+
+If the directory cannot be determined, it will change to the root of the system. \hypertarget{DirectoryTraverser_8h_a0d4cc50108cc01706453444f82085f2b}{\index{Directory\-Traverser.\-h@{Directory\-Traverser.\-h}!get\-\_\-current\-\_\-directory@{get\-\_\-current\-\_\-directory}}
+\index{get\-\_\-current\-\_\-directory@{get\-\_\-current\-\_\-directory}!DirectoryTraverser.h@{Directory\-Traverser.\-h}}
+\subsubsection[{get\-\_\-current\-\_\-directory}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ get\-\_\-current\-\_\-directory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{DirectoryTraverser_8h_a0d4cc50108cc01706453444f82085f2b}
+
+
+Gets the current directory. 
+
+\begin{DoxyReturn}{Returns}
+-\/ the full path to the current working directory 
+\end{DoxyReturn}

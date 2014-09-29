@@ -1,0 +1,112 @@
+\hypertarget{TestCommandParser_8c}{\section{Test\-Command\-Parser.\-c File Reference}
+\label{TestCommandParser_8c}\index{Test\-Command\-Parser.\-c@{Test\-Command\-Parser.\-c}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}string.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}common.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Command\-Parser.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{TestCommandParser_8c_ad831915bc375efb1fab423abe2d0237a}{myassert}(expr)~if(!(expr))\{ fprintf(stderr, \char`\"{}\textbackslash{}t\mbox{[}assertion failed\mbox{]} \%s\-: \%s\textbackslash{}n\char`\"{}, \-\_\-\-\_\-\-P\-R\-E\-T\-T\-Y\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-\_\-, \-\_\-\-\_\-\-S\-T\-R\-I\-N\-G(expr)); return \hyperlink{common_8h_aa93f0eb578d23995850d61f7d61c55c1}{F\-A\-L\-S\-E}; \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{TestCommandParser_8c_ac99dadd797aac2bdc33c2cd84a79ada2}{print\-Test\-Info} (char $\ast$test\-Name, char $\ast$info)
+\item 
+void \hyperlink{TestCommandParser_8c_ac96e9942e3eaf0d0531a3414d3d20608}{print\-Test\-Result} (char $\ast$test\-Name, \hyperlink{common_8h_a127a96e09108f503cca20256eaa4ddff}{Boolean} passed)
+\item 
+void \hyperlink{TestCommandParser_8c_ae7ea328fc3ed5baa20d64b64778b84d8}{before\-Test} (char $\ast$test\-Name)
+\item 
+void \hyperlink{TestCommandParser_8c_aa61bcd000621ca9664af690bc0bf76f1}{after\-Test} (char $\ast$test\-Name, \hyperlink{common_8h_a127a96e09108f503cca20256eaa4ddff}{Boolean} result)
+\item 
+\hyperlink{common_8h_a127a96e09108f503cca20256eaa4ddff}{Boolean} \hyperlink{TestCommandParser_8c_a22f75402c30e5a556fb7976f14615701}{conjoined\-Background\-Job} ()
+\item 
+void \hyperlink{TestCommandParser_8c_adc55d66d01b104380f72a64f36c4cb9d}{run\-Unit\-Tests} ()
+\item 
+int \hyperlink{TestCommandParser_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{TestCommandParser_8c_ae8a1c912f8cc7d3e951bfbde65a08f4d}{test\-Count} = 0
+\item 
+int \hyperlink{TestCommandParser_8c_a415b2b418d3a90a6e1da72992e7577aa}{pass\-Count} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{TestCommandParser_8c_ad831915bc375efb1fab423abe2d0237a}{\index{Test\-Command\-Parser.\-c@{Test\-Command\-Parser.\-c}!myassert@{myassert}}
+\index{myassert@{myassert}!TestCommandParser.c@{Test\-Command\-Parser.\-c}}
+\subsubsection[{myassert}]{\setlength{\rightskip}{0pt plus 5cm}\#define myassert(
+\begin{DoxyParamCaption}
+\item[{}]{expr}
+\end{DoxyParamCaption}
+)~if(!(expr))\{ fprintf(stderr, \char`\"{}\textbackslash{}t\mbox{[}assertion failed\mbox{]} \%s\-: \%s\textbackslash{}n\char`\"{}, \-\_\-\-\_\-\-P\-R\-E\-T\-T\-Y\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-\_\-, \-\_\-\-\_\-\-S\-T\-R\-I\-N\-G(expr)); return {\bf F\-A\-L\-S\-E}; \}}}\label{TestCommandParser_8c_ad831915bc375efb1fab423abe2d0237a}
+
+
+\subsection{Function Documentation}
+\hypertarget{TestCommandParser_8c_aa61bcd000621ca9664af690bc0bf76f1}{\index{Test\-Command\-Parser.\-c@{Test\-Command\-Parser.\-c}!after\-Test@{after\-Test}}
+\index{after\-Test@{after\-Test}!TestCommandParser.c@{Test\-Command\-Parser.\-c}}
+\subsubsection[{after\-Test}]{\setlength{\rightskip}{0pt plus 5cm}void after\-Test (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{test\-Name, }
+\item[{{\bf Boolean}}]{result}
+\end{DoxyParamCaption}
+)}}\label{TestCommandParser_8c_aa61bcd000621ca9664af690bc0bf76f1}
+\hypertarget{TestCommandParser_8c_ae7ea328fc3ed5baa20d64b64778b84d8}{\index{Test\-Command\-Parser.\-c@{Test\-Command\-Parser.\-c}!before\-Test@{before\-Test}}
+\index{before\-Test@{before\-Test}!TestCommandParser.c@{Test\-Command\-Parser.\-c}}
+\subsubsection[{before\-Test}]{\setlength{\rightskip}{0pt plus 5cm}void before\-Test (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{test\-Name}
+\end{DoxyParamCaption}
+)}}\label{TestCommandParser_8c_ae7ea328fc3ed5baa20d64b64778b84d8}
+\hypertarget{TestCommandParser_8c_a22f75402c30e5a556fb7976f14615701}{\index{Test\-Command\-Parser.\-c@{Test\-Command\-Parser.\-c}!conjoined\-Background\-Job@{conjoined\-Background\-Job}}
+\index{conjoined\-Background\-Job@{conjoined\-Background\-Job}!TestCommandParser.c@{Test\-Command\-Parser.\-c}}
+\subsubsection[{conjoined\-Background\-Job}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} conjoined\-Background\-Job (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{TestCommandParser_8c_a22f75402c30e5a556fb7976f14615701}
+\hypertarget{TestCommandParser_8c_a0ddf1224851353fc92bfbff6f499fa97}{\index{Test\-Command\-Parser.\-c@{Test\-Command\-Parser.\-c}!main@{main}}
+\index{main@{main}!TestCommandParser.c@{Test\-Command\-Parser.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{TestCommandParser_8c_a0ddf1224851353fc92bfbff6f499fa97}
+\hypertarget{TestCommandParser_8c_ac99dadd797aac2bdc33c2cd84a79ada2}{\index{Test\-Command\-Parser.\-c@{Test\-Command\-Parser.\-c}!print\-Test\-Info@{print\-Test\-Info}}
+\index{print\-Test\-Info@{print\-Test\-Info}!TestCommandParser.c@{Test\-Command\-Parser.\-c}}
+\subsubsection[{print\-Test\-Info}]{\setlength{\rightskip}{0pt plus 5cm}void print\-Test\-Info (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{test\-Name, }
+\item[{char $\ast$}]{info}
+\end{DoxyParamCaption}
+)}}\label{TestCommandParser_8c_ac99dadd797aac2bdc33c2cd84a79ada2}
+\hypertarget{TestCommandParser_8c_ac96e9942e3eaf0d0531a3414d3d20608}{\index{Test\-Command\-Parser.\-c@{Test\-Command\-Parser.\-c}!print\-Test\-Result@{print\-Test\-Result}}
+\index{print\-Test\-Result@{print\-Test\-Result}!TestCommandParser.c@{Test\-Command\-Parser.\-c}}
+\subsubsection[{print\-Test\-Result}]{\setlength{\rightskip}{0pt plus 5cm}void print\-Test\-Result (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{test\-Name, }
+\item[{{\bf Boolean}}]{passed}
+\end{DoxyParamCaption}
+)}}\label{TestCommandParser_8c_ac96e9942e3eaf0d0531a3414d3d20608}
+\hypertarget{TestCommandParser_8c_adc55d66d01b104380f72a64f36c4cb9d}{\index{Test\-Command\-Parser.\-c@{Test\-Command\-Parser.\-c}!run\-Unit\-Tests@{run\-Unit\-Tests}}
+\index{run\-Unit\-Tests@{run\-Unit\-Tests}!TestCommandParser.c@{Test\-Command\-Parser.\-c}}
+\subsubsection[{run\-Unit\-Tests}]{\setlength{\rightskip}{0pt plus 5cm}void run\-Unit\-Tests (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{TestCommandParser_8c_adc55d66d01b104380f72a64f36c4cb9d}
+
+
+\subsection{Variable Documentation}
+\hypertarget{TestCommandParser_8c_a415b2b418d3a90a6e1da72992e7577aa}{\index{Test\-Command\-Parser.\-c@{Test\-Command\-Parser.\-c}!pass\-Count@{pass\-Count}}
+\index{pass\-Count@{pass\-Count}!TestCommandParser.c@{Test\-Command\-Parser.\-c}}
+\subsubsection[{pass\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int pass\-Count = 0}}\label{TestCommandParser_8c_a415b2b418d3a90a6e1da72992e7577aa}
+\hypertarget{TestCommandParser_8c_ae8a1c912f8cc7d3e951bfbde65a08f4d}{\index{Test\-Command\-Parser.\-c@{Test\-Command\-Parser.\-c}!test\-Count@{test\-Count}}
+\index{test\-Count@{test\-Count}!TestCommandParser.c@{Test\-Command\-Parser.\-c}}
+\subsubsection[{test\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int test\-Count = 0}}\label{TestCommandParser_8c_ae8a1c912f8cc7d3e951bfbde65a08f4d}

@@ -24,10 +24,33 @@ struct job {
     int job_state;
 };
 
+/**
+ * Creates a job
+ * @param - the pid of the process
+ * @param - the command used to create the process
+ * @param - the job id
+ * @return - the Job*
+ */
 JobPtr createJob (const int, const char *, const int);
 
+/**
+ * Prints a string representation of the Job
+ * @param - the Job to print
+ * @return - the string representing the Job
+ */
 char *toString(const void *);
+
+/**
+ * Frees the job
+ * @param - the Job to free
+ */
 void freeJob(const void *);
+/**
+ * Determines if two Jobs are identical
+ * @param - Job to compare
+ * @param - Job to compare 
+ * @return - nonzero if the Jobs are identical
+ */
 int compareTo(const void *,const void *);
 void job_creation_printout(JobPtr);
 

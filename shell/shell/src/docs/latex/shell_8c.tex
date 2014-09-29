@@ -1,0 +1,59 @@
+\hypertarget{shell_8c}{\section{shell.\-c File Reference}
+\label{shell_8c}\index{shell.\-c@{shell.\-c}}
+}
+{\ttfamily \#include \char`\"{}shell.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{shell_8c_a3fd0ebf1fea9f6c83a0a70c75a07bbe3}{print\-\_\-command\-\_\-and\-\_\-args} (char $\ast$$\ast$)
+\item 
+int \hyperlink{shell_8c_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\item 
+int \hyperlink{shell_8c_ad7f7426ef97118e2e67de73d83461192}{handle\-\_\-parent\-\_\-commands} (char $\ast$$\ast$command\-\_\-and\-\_\-args)
+\begin{DoxyCompactList}\small\item\em Handles any commmands that the parent is required to take care of. \end{DoxyCompactList}\item 
+void \hyperlink{shell_8c_a57edfecf9a97060ca0cb5abffd7ca576}{free\-\_\-command\-\_\-and\-\_\-\-Line} (char $\ast$line, char $\ast$$\ast$tokenized\-\_\-command)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{shell_8c_a57edfecf9a97060ca0cb5abffd7ca576}{\index{shell.\-c@{shell.\-c}!free\-\_\-command\-\_\-and\-\_\-\-Line@{free\-\_\-command\-\_\-and\-\_\-\-Line}}
+\index{free\-\_\-command\-\_\-and\-\_\-\-Line@{free\-\_\-command\-\_\-and\-\_\-\-Line}!shell.c@{shell.\-c}}
+\subsubsection[{free\-\_\-command\-\_\-and\-\_\-\-Line}]{\setlength{\rightskip}{0pt plus 5cm}void free\-\_\-command\-\_\-and\-\_\-\-Line (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{line, }
+\item[{char $\ast$$\ast$}]{tokenized\-\_\-command}
+\end{DoxyParamCaption}
+)}}\label{shell_8c_a57edfecf9a97060ca0cb5abffd7ca576}
+\hypertarget{shell_8c_ad7f7426ef97118e2e67de73d83461192}{\index{shell.\-c@{shell.\-c}!handle\-\_\-parent\-\_\-commands@{handle\-\_\-parent\-\_\-commands}}
+\index{handle\-\_\-parent\-\_\-commands@{handle\-\_\-parent\-\_\-commands}!shell.c@{shell.\-c}}
+\subsubsection[{handle\-\_\-parent\-\_\-commands}]{\setlength{\rightskip}{0pt plus 5cm}int handle\-\_\-parent\-\_\-commands (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{shell_8c_ad7f7426ef97118e2e67de73d83461192}
+
+
+Handles any commmands that the parent is required to take care of. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & the tokenized command \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ nonzero if the parent handled the command passed 
+\end{DoxyReturn}
+\hypertarget{shell_8c_a840291bc02cba5474a4cb46a9b9566fe}{\index{shell.\-c@{shell.\-c}!main@{main}}
+\index{main@{main}!shell.c@{shell.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{shell_8c_a840291bc02cba5474a4cb46a9b9566fe}
+\hypertarget{shell_8c_a3fd0ebf1fea9f6c83a0a70c75a07bbe3}{\index{shell.\-c@{shell.\-c}!print\-\_\-command\-\_\-and\-\_\-args@{print\-\_\-command\-\_\-and\-\_\-args}}
+\index{print\-\_\-command\-\_\-and\-\_\-args@{print\-\_\-command\-\_\-and\-\_\-args}!shell.c@{shell.\-c}}
+\subsubsection[{print\-\_\-command\-\_\-and\-\_\-args}]{\setlength{\rightskip}{0pt plus 5cm}void print\-\_\-command\-\_\-and\-\_\-args (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{tokenized\-\_\-command\-\_\-and\-\_\-args}
+\end{DoxyParamCaption}
+)}}\label{shell_8c_a3fd0ebf1fea9f6c83a0a70c75a07bbe3}

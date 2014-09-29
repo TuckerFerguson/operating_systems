@@ -1,15 +1,15 @@
 INSTALL=..
 INCLUDE=$(INSTALL)/include -I.
-LIBS=$(INSTALL)/lib -lreadline -lncurses
+LIBS=$(INSTALL) -lreadline -lncurses
 LFLAGS=-L$(LIBS) -lgenericList
 CC=gcc
-CFLAGS=-Wall -g -DDEBUG -I$(INCLUDE)
+CFLAGS=-Wall -g -I$(INCLUDE)
 
-PROGS=shell jobmanager
+PROGS=mydash dox
 
 all: $(PROGS) 
 
-shell: shell.o error.o CommandParser.o Job.o DirectoryTraverser.o JobManager.o
+mydash: shell.o error.o CommandParser.o Job.o DirectoryTraverser.o JobManager.o
 	$(CC) $(CFLAGS) -o $@ shell.o error.o CommandParser.o Job.o DirectoryTraverser.o JobManager.o $(LFLAGS)
 
 commandparser: CommandParser.o TestCommandParser.o

@@ -33,19 +33,26 @@ int main(void) {
         {
             update_completed_jobs();
             print_jobs();
+            free_command_and_Line(line, tokenized_command_and_args);
             continue;
         }
             
         //if command was only whitespace, get another        
         contains_commands = regexec(&contains_word, line, 0, NULL, 0);
-        if (contains_commands == REG_NOMATCH) 
+        if (contains_commands == REG_NOMATCH)
+        {
+            free_command_and_Line(line, tokenized_command_and_args);
             continue;
+        }
         
         add_history(line);
         
         //if the parent handled this command, get another
         if (handle_parent_commands(tokenized_command_and_args))
+        {
+            free_command_and_Line(line, tokenized_command_and_args);
             continue;
+        }
         
         //determine whether or not to wait for the child
         index_of_ampersand = is_background_job(tokenized_command_and_args);
@@ -61,12 +68,7 @@ int main(void) {
                 start_job(line, tokenized_command_and_args);
             exit(1);
         }
-        
-//        printf("Was process killed? %s\n", was_process_killed(pid) == FALSE ? "False" :  "True");
-        
-//        if (was_process_killed(pid))
-//            continue;
-         
+
         //not a background job, wait for the child
         if (index_of_ampersand < 0)
         {
@@ -79,7 +81,7 @@ int main(void) {
             log_background_job(pid, line);
         }
         
-        free(line);
+        free_command_and_Line(line, tokenized_command_and_args);
     }
     regfree(&contains_word);
     exit(EXIT_SUCCESS);
@@ -118,4 +120,15 @@ void print_command_and_args(char** tokenized_command_and_args)
     for (i = 0; i < 5; ++i) {
         printf("arg %d %s\n", i, tokenized_command_and_args[i]);
     }
+}
+
+void free_command_and_Line(char* line, char** tokenized_command)
+{
+    free(line);
+    int i;
+    for (i = 0; i < MAX_SHELL_ARGUMENTS; i++)
+    {
+        free(tokenized_command[i]);
+    }
+    free (tokenized_command);
 }

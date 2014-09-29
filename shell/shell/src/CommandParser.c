@@ -1,3 +1,4 @@
+
 #include "CommandParser.h"
 #include "JobManager.h"
 
@@ -24,6 +25,7 @@ char** get_tokenized_command(char * line)
     }
     tokens[cnt] = (char *) 0; /* make the field array be null-terminated */
 
+    free(copy);
     return tokens;
 }
 

@@ -1,0 +1,39 @@
+\hypertarget{shell_8h}{\section{shell.\-h File Reference}
+\label{shell_8h}\index{shell.\-h@{shell.\-h}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$readline/readline.\-h$>$}\\*
+{\ttfamily \#include $<$readline/history.\-h$>$}\\*
+{\ttfamily \#include $<$sys/wait.\-h$>$}\\*
+{\ttfamily \#include $<$regex.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}ourhdr.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Command\-Parser.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Directory\-Traverser.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Job\-Manager.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{shell_8h_a1b77b06205485c933b0544f8c7108c21}{handle\-\_\-parent\-\_\-commands} (char $\ast$$\ast$)
+\begin{DoxyCompactList}\small\item\em Handles any commmands that the parent is required to take care of. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{shell_8h_a1b77b06205485c933b0544f8c7108c21}{\index{shell.\-h@{shell.\-h}!handle\-\_\-parent\-\_\-commands@{handle\-\_\-parent\-\_\-commands}}
+\index{handle\-\_\-parent\-\_\-commands@{handle\-\_\-parent\-\_\-commands}!shell.h@{shell.\-h}}
+\subsubsection[{handle\-\_\-parent\-\_\-commands}]{\setlength{\rightskip}{0pt plus 5cm}int handle\-\_\-parent\-\_\-commands (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{shell_8h_a1b77b06205485c933b0544f8c7108c21}
+
+
+Handles any commmands that the parent is required to take care of. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & the tokenized command \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ nonzero if the parent handled the command passed 
+\end{DoxyReturn}

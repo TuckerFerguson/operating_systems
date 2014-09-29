@@ -1,0 +1,109 @@
+\hypertarget{Job_8c}{\section{Job.\-c File Reference}
+\label{Job_8c}\index{Job.\-c@{Job.\-c}}
+}
+{\ttfamily \#include \char`\"{}Job.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Job_8h_a9b45aca8d14f792be2c663f224868a0f}{Job\-Ptr} \hyperlink{Job_8c_a9e81b9393b5e03385dcccdae2c2f05cd}{create\-Job} (const int pid, const char $\ast$original\-\_\-command, int job\-\_\-id)
+\begin{DoxyCompactList}\small\item\em Creates a job. \end{DoxyCompactList}\item 
+int \hyperlink{Job_8c_af4698222d3b298ddc62fd8a23254c101}{compare\-To} (const void $\ast$obj, const void $\ast$other)
+\begin{DoxyCompactList}\small\item\em Determines if two Jobs are identical. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{Job_8c_a3c2b7655dfda066cd088c4f1016dd8f5}{to\-String} (const void $\ast$obj)
+\begin{DoxyCompactList}\small\item\em Prints a string representation of the Job. \end{DoxyCompactList}\item 
+void \hyperlink{Job_8c_a8bc7c5f7ed32a10485a7efe111a09e59}{free\-Job} (const void $\ast$obj)
+\begin{DoxyCompactList}\small\item\em Frees the job. \end{DoxyCompactList}\item 
+void \hyperlink{Job_8c_ac44a007899530dc3ebb76586dcdc527b}{job\-\_\-creation\-\_\-printout} (\hyperlink{Job_8h_a9b45aca8d14f792be2c663f224868a0f}{Job\-Ptr} \hyperlink{structjob}{job})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{Job_8c_af4698222d3b298ddc62fd8a23254c101}{\index{Job.\-c@{Job.\-c}!compare\-To@{compare\-To}}
+\index{compare\-To@{compare\-To}!Job.c@{Job.\-c}}
+\subsubsection[{compare\-To}]{\setlength{\rightskip}{0pt plus 5cm}int compare\-To (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{, }
+\item[{const void $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{Job_8c_af4698222d3b298ddc62fd8a23254c101}
+
+
+Determines if two Jobs are identical. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & Job to compare \\
+\hline
+{\em -\/} & Job to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ nonzero if the Jobs are identical 
+\end{DoxyReturn}
+\hypertarget{Job_8c_a9e81b9393b5e03385dcccdae2c2f05cd}{\index{Job.\-c@{Job.\-c}!create\-Job@{create\-Job}}
+\index{create\-Job@{create\-Job}!Job.c@{Job.\-c}}
+\subsubsection[{create\-Job}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Job\-Ptr} create\-Job (
+\begin{DoxyParamCaption}
+\item[{const int}]{, }
+\item[{const char $\ast$}]{, }
+\item[{const int}]{}
+\end{DoxyParamCaption}
+)}}\label{Job_8c_a9e81b9393b5e03385dcccdae2c2f05cd}
+
+
+Creates a job. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & the pid of the process \\
+\hline
+{\em -\/} & the command used to create the process \\
+\hline
+{\em -\/} & the job id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ the Job$\ast$ 
+\end{DoxyReturn}
+\hypertarget{Job_8c_a8bc7c5f7ed32a10485a7efe111a09e59}{\index{Job.\-c@{Job.\-c}!free\-Job@{free\-Job}}
+\index{free\-Job@{free\-Job}!Job.c@{Job.\-c}}
+\subsubsection[{free\-Job}]{\setlength{\rightskip}{0pt plus 5cm}void free\-Job (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{Job_8c_a8bc7c5f7ed32a10485a7efe111a09e59}
+
+
+Frees the job. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & the Job to free \\
+\hline
+\end{DoxyParams}
+\hypertarget{Job_8c_ac44a007899530dc3ebb76586dcdc527b}{\index{Job.\-c@{Job.\-c}!job\-\_\-creation\-\_\-printout@{job\-\_\-creation\-\_\-printout}}
+\index{job\-\_\-creation\-\_\-printout@{job\-\_\-creation\-\_\-printout}!Job.c@{Job.\-c}}
+\subsubsection[{job\-\_\-creation\-\_\-printout}]{\setlength{\rightskip}{0pt plus 5cm}void job\-\_\-creation\-\_\-printout (
+\begin{DoxyParamCaption}
+\item[{{\bf Job\-Ptr}}]{job}
+\end{DoxyParamCaption}
+)}}\label{Job_8c_ac44a007899530dc3ebb76586dcdc527b}
+\hypertarget{Job_8c_a3c2b7655dfda066cd088c4f1016dd8f5}{\index{Job.\-c@{Job.\-c}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!Job.c@{Job.\-c}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ to\-String (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{Job_8c_a3c2b7655dfda066cd088c4f1016dd8f5}
+
+
+Prints a string representation of the Job. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & the Job to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ the string representing the Job 
+\end{DoxyReturn}

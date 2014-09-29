@@ -16,13 +16,53 @@
 #ifndef JOBMANAGER_H
 #define	JOBMANAGER_H
 
-int is_background_job(char**);
+/**
+ * Strips the ampersand from the command and execs it.
+ * @param - the unmodified line entered into the shell 
+ * @param - the tokenized command
+ * @param - the index of the token containing the ampersand
+ * @return - FALSE if the exec fails
+ */
 Boolean start_background_job(char*, char**, int);
+
+/**
+ * Begins a non-background job
+ * @param - the unmodified line entered into the shell 
+ * @param - the tokenized command
+ * @return - FALSE if the exec fails
+ */
 Boolean start_job(char*, char**);
+
+/**
+ * Prints the jobs contained in the Job list
+ */
 void print_jobs();
+/**
+ * Initializes the Job list and the job id counter
+ */
 void init_job_manager();
+/**
+ * Adds a background job to the Job list for simple job management
+ * @param - the pid of the process
+ * @param - the line used to create the process
+ */
 void log_background_job(int, char*);
+/**
+ * Goes through the job list and determines the status of the processes and updates their state accorindgly
+ */
 void update_completed_jobs();
+/**
+ * Determines if the process is running or not
+ * @param - the pid of the process
+ * @return - nonzero if the process is still running
+ */
+int process_state(int);
+/**
+ * Determines if the process exited normally or otherwise
+ * @param - the pid of the process
+ * @return - nonzero if the process did not exit normally where normally is defined by exit(EXIT_SUCCESS)
+ */
+int exit_status(int);
 
 #endif	/* JOBMANAGER_H */
 
