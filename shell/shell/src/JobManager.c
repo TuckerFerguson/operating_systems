@@ -55,31 +55,11 @@ void update_completed_jobs()
     do 
     {
         Job* job = (Job*)(traversal_node->data);
-        printf("Check if job with %d pid is done\n", job->pid);
+//        printf("Check if job with %d pid is done\n", job->pid);
         
         job->job_state = process_state(job->pid);
         if (job->job_state == COMPLETE)
             job->exit_status = exit_status(job->pid);
-        
-//	waitpid(job->pid, &status, WNOHANG);
-        
-//        int job_state;
-//        int exit_status;
-//	if (WIFEXITED(status)) 
-//        {
-//            job_state = COMPLETE;
-//            exit_status = !WEXITSTATUS(status) ? PROBLEM : NORMAL; 
-//        }
-//        else if (WIFSIGNALED(status) || WTERMSIG(status) || WCOREDUMP(status) || WIFSTOPPED(status) || WSTOPSIG(status))
-//	{
-//            job_state = COMPLETE;
-//            //oversimplification here...not all signals could mean that there was a problem but the majority of them do
-//            exit_status = PROBLEM;
-//        }
-        
-
-//        traversal_node->data = (void*)job;
-        
     }
     while((traversal_node = traversal_node->next));
 }
@@ -108,9 +88,14 @@ int exit_status(int pid)
 {
     int status;
     waitpid(pid, &status, WUNTRACED);
-    signal_debugging(pid, status);
+//    signal_debugging(pid, status);
     if (WEXITSTATUS(status) || WIFSIGNALED(status)) // && WTERMSIG(status) <= SIGUNUSED && WTERMSIG(status) >= SIGHUP))
         return PROBLEM;
     else
         return NORMAL;
+}
+
+Boolean command_references_real_executable(char** tokenized_command)
+{
+    
 }

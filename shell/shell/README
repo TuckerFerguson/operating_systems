@@ -20,8 +20,11 @@ BUILDING AND RUNNING:
 		make
 
 	Run:
-		./mydash
-	
+		./mydash [-v]
+
+	To update version:
+		make update_version
+
 SHELL DETAILS:
 
 OBSERVATIONS:

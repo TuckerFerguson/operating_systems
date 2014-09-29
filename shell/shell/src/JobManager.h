@@ -12,6 +12,8 @@
 #include "unistd.h"
 #include "CommandParser.h"
 #include "wait.h"
+#include "sys/stat.h"
+#include "sys/types.h"
 
 #ifndef JOBMANAGER_H
 #define	JOBMANAGER_H

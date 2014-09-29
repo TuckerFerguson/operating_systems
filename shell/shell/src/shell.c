@@ -73,7 +73,7 @@ int main(int argc, char** argv) {
                 start_background_job(line, tokenized_command_and_args, index_of_ampersand);
             else
                 start_job(line, tokenized_command_and_args);
-            exit(1);
+            exit(EXIT_FAILURE);
         }
 
         //not a background job, wait for the child
