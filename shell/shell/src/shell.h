@@ -7,6 +7,7 @@
 #include "CommandParser.h"
 #include "DirectoryTraverser.h"
 #include "JobManager.h"
+#include <List.h>
 
 #ifndef SHELL_H
 #define	SHELL_H

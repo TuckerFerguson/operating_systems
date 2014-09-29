@@ -1,4 +1,5 @@
 #include "JobManager.h"
+#include "List.h"
 
 Boolean exec_command(char*, char**);
 
@@ -95,7 +96,7 @@ int exit_status(int pid)
         return NORMAL;
 }
 
-Boolean command_references_real_executable(char** tokenized_command)
+void free_jobs()
 {
-    
+    freeList(jobs);
 }

@@ -42,3 +42,5 @@ KNOWN BUGS:
 The exit status of a process is not accurate...I have no idea what needs to be changed but I fiddled with it for hours and didn't get it doing anything consistent. At times, all processes (even ones killed by kill -9) will report that exit with status 0 and that they have not been signaled. At other times, processes that exit normal will say that they have been signaled by signals way outside the range of [1,31] leading to no end of confusion on my part.
 
 Invalid jobs with ampersands in them are stored in the job list and cause problems when the jobs are updated.
+
+Leaking memory ALL OVER! :-(

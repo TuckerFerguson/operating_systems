@@ -40,7 +40,7 @@ int main(int argc, char** argv) {
         {
             update_completed_jobs();
             print_jobs();
-            free_command_and_Line(line, tokenized_command_and_args);
+//            free_command_and_Line(line, tokenized_command_and_args);
             continue;
         }
             
@@ -48,7 +48,7 @@ int main(int argc, char** argv) {
         contains_commands = regexec(&contains_word, line, 0, NULL, 0);
         if (contains_commands == REG_NOMATCH)
         {
-            free_command_and_Line(line, tokenized_command_and_args);
+//            free_command_and_Line(line, tokenized_command_and_args);
             continue;
         }
         
@@ -57,7 +57,7 @@ int main(int argc, char** argv) {
         //if the parent handled this command, get another
         if (handle_parent_commands(tokenized_command_and_args))
         {
-            free_command_and_Line(line, tokenized_command_and_args);
+//            free_command_and_Line(line, tokenized_command_and_args);
             continue;
         }
         
@@ -88,7 +88,7 @@ int main(int argc, char** argv) {
             log_background_job(pid, line);
         }
         
-        free_command_and_Line(line, tokenized_command_and_args);
+//        free_command_and_Line(line, tokenized_command_and_args);
     }
     regfree(&contains_word);
     exit(EXIT_SUCCESS);
@@ -110,6 +110,7 @@ int handle_parent_commands(char** command_and_args)
     }
     else if (strstr(command, "exit"))
     {
+        free_jobs();
         kill(getpid(), SIGKILL);
     }
     else if (strstr(command, "jobs"))

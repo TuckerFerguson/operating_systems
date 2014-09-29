@@ -1,5 +1,5 @@
 INSTALL=..
-INCLUDE=$(INSTALL)/include -I.
+INCLUDE=$(INSTALL)/list_src/include -I.
 LIBS=$(INSTALL) -lreadline -lncurses
 LFLAGS=-L$(LIBS) -lgenericList
 CC=gcc

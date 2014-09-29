@@ -46,7 +46,7 @@
       <item path="src/CommandParser.c" ex="false" tool="0" flavor2="2">
         <cTool flags="0">
           <incDir>
-            <pElem>include</pElem>
+            <pElem>list_src/include</pElem>
             <pElem>src</pElem>
           </incDir>
         </cTool>
@@ -54,7 +54,7 @@
       <item path="src/DirectoryTraverser.c" ex="false" tool="0" flavor2="2">
         <cTool flags="0">
           <incDir>
-            <pElem>include</pElem>
+            <pElem>list_src/include</pElem>
             <pElem>src</pElem>
           </incDir>
         </cTool>
@@ -62,7 +62,7 @@
       <item path="src/Job.c" ex="false" tool="0" flavor2="2">
         <cTool flags="0">
           <incDir>
-            <pElem>include</pElem>
+            <pElem>list_src/include</pElem>
             <pElem>src</pElem>
           </incDir>
         </cTool>
@@ -70,7 +70,7 @@
       <item path="src/JobManager.c" ex="false" tool="0" flavor2="0">
         <cTool flags="0">
           <incDir>
-            <pElem>include</pElem>
+            <pElem>list_src/include</pElem>
             <pElem>src</pElem>
           </incDir>
         </cTool>
@@ -91,7 +91,7 @@
       <item path="src/error.c" ex="false" tool="0" flavor2="2">
         <cTool flags="0">
           <incDir>
-            <pElem>include</pElem>
+            <pElem>list_src/include</pElem>
             <pElem>src</pElem>
           </incDir>
         </cTool>
@@ -99,7 +99,7 @@
       <item path="src/shell.c" ex="false" tool="0" flavor2="0">
         <cTool flags="0">
           <incDir>
-            <pElem>include</pElem>
+            <pElem>list_src/include</pElem>
             <pElem>src</pElem>
           </incDir>
         </cTool>

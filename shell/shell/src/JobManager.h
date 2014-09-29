@@ -65,6 +65,11 @@ int process_state(int);
  * @return - nonzero if the process did not exit normally where normally is defined by exit(EXIT_SUCCESS)
  */
 int exit_status(int);
+/**
+ * Frees jobs
+ */
+void free_jobs();
+
 
 #endif	/* JOBMANAGER_H */
 
