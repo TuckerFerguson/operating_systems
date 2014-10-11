@@ -104,7 +104,7 @@ static void free_tokens(int num, char *field[])
     int i;
     for (i=0; i<num; i++)
         free(field[i]);
-	free(field);
+//	free(field);
 }
 
 
@@ -228,6 +228,7 @@ void process_file(void *ptr)
         printf("Ending date: %s\n", end_date);
         free(end_date);
 		free(linebuffer);
+		free(field);
     }
 }
 
