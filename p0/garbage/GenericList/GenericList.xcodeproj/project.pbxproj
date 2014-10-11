@@ -1,0 +1,96 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		EBB7AE8719BD1DE100783F80 /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = common.h; path = "../cs.boisestate.edu/repos/csdept/courses/cs253/lab/C-examples/doublyLinkedLists/generic/common.h"; sourceTree = "<group>"; };
+		EBB7AE8819BD1DE100783F80 /* doxygen-config */ = {isa = PBXFileReference; lastKnownFileType = text; name = "doxygen-config"; path = "../cs.boisestate.edu/repos/csdept/courses/cs253/lab/C-examples/doublyLinkedLists/generic/doxygen-config"; sourceTree = "<group>"; };
+		EBB7AE8919BD1DE100783F80 /* List.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = List.c; path = "../cs.boisestate.edu/repos/csdept/courses/cs253/lab/C-examples/doublyLinkedLists/generic/List.c"; sourceTree = "<group>"; };
+		EBB7AE8A19BD1DE100783F80 /* List.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = List.h; path = "../cs.boisestate.edu/repos/csdept/courses/cs253/lab/C-examples/doublyLinkedLists/generic/List.h"; sourceTree = "<group>"; };
+		EBB7AE8B19BD1DE100783F80 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; name = Makefile; path = "../cs.boisestate.edu/repos/csdept/courses/cs253/lab/C-examples/doublyLinkedLists/generic/Makefile"; sourceTree = "<group>"; };
+		EBB7AE8C19BD1DE100783F80 /* Node.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = Node.c; path = "../cs.boisestate.edu/repos/csdept/courses/cs253/lab/C-examples/doublyLinkedLists/generic/Node.c"; sourceTree = "<group>"; };
+		EBB7AE8D19BD1DE100783F80 /* Node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Node.h; path = "../cs.boisestate.edu/repos/csdept/courses/cs253/lab/C-examples/doublyLinkedLists/generic/Node.h"; sourceTree = "<group>"; };
+		EBB7AE8E19BD1DE100783F80 /* Object.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = Object.c; path = "../cs.boisestate.edu/repos/csdept/courses/cs253/lab/C-examples/doublyLinkedLists/generic/Object.c"; sourceTree = "<group>"; };
+		EBB7AE8F19BD1DE100783F80 /* Object.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Object.h; path = "../cs.boisestate.edu/repos/csdept/courses/cs253/lab/C-examples/doublyLinkedLists/generic/Object.h"; sourceTree = "<group>"; };
+		EBB7AE9019BD1DE100783F80 /* RandomTestList.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = RandomTestList.c; path = "../cs.boisestate.edu/repos/csdept/courses/cs253/lab/C-examples/doublyLinkedLists/generic/RandomTestList.c"; sourceTree = "<group>"; };
+		EBB7AE9119BD1DE100783F80 /* SimpleTestList.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = SimpleTestList.c; path = "../cs.boisestate.edu/repos/csdept/courses/cs253/lab/C-examples/doublyLinkedLists/generic/SimpleTestList.c"; sourceTree = "<group>"; };
+		EBB7AE9219BD1DE100783F80 /* TestList.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = TestList.c; path = "../cs.boisestate.edu/repos/csdept/courses/cs253/lab/C-examples/doublyLinkedLists/generic/TestList.c"; sourceTree = "<group>"; };
+		EBB7AE9319BD1DE100783F80 /* UnitTestList.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = UnitTestList.c; path = "../cs.boisestate.edu/repos/csdept/courses/cs253/lab/C-examples/doublyLinkedLists/generic/UnitTestList.c"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		EBB7AE8019BD1D9600783F80 = {
+			isa = PBXGroup;
+			children = (
+				EBB7AE8719BD1DE100783F80 /* common.h */,
+				EBB7AE8819BD1DE100783F80 /* doxygen-config */,
+				EBB7AE8919BD1DE100783F80 /* List.c */,
+				EBB7AE8A19BD1DE100783F80 /* List.h */,
+				EBB7AE8B19BD1DE100783F80 /* Makefile */,
+				EBB7AE8C19BD1DE100783F80 /* Node.c */,
+				EBB7AE8D19BD1DE100783F80 /* Node.h */,
+				EBB7AE8E19BD1DE100783F80 /* Object.c */,
+				EBB7AE8F19BD1DE100783F80 /* Object.h */,
+				EBB7AE9019BD1DE100783F80 /* RandomTestList.c */,
+				EBB7AE9119BD1DE100783F80 /* SimpleTestList.c */,
+				EBB7AE9219BD1DE100783F80 /* TestList.c */,
+				EBB7AE9319BD1DE100783F80 /* UnitTestList.c */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		EBB7AE8119BD1D9600783F80 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = EBB7AE8419BD1D9600783F80 /* Build configuration list for PBXProject "GenericList" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EBB7AE8019BD1D9600783F80;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		EBB7AE8519BD1D9600783F80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		EBB7AE8619BD1D9600783F80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EBB7AE8419BD1D9600783F80 /* Build configuration list for PBXProject "GenericList" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBB7AE8519BD1D9600783F80 /* Debug */,
+				EBB7AE8619BD1D9600783F80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EBB7AE8119BD1D9600783F80 /* Project object */;
+}

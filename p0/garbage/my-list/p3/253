@@ -1,0 +1,41 @@
+*****************************
+* Assignment 3              * 
+* CompSci 253		        *
+* March 20, 2013            *
+* Reuben Tanner (113104237) *
+*****************************
+
+PROJECT OVERVIEW:
+
+This project is a doubly linked non circular list that had a test class.
+
+INCLUDED FILES:
+
+ * TestList.c - source code
+ * Job.c - source code
+ * Node.c - source code
+ * List.c - source code
+ * TestList.h - header file
+ * Job.h - header file
+ * Node.h - header file
+ * List.h - header file
+ * Makefile - makefile
+ * README - this file
+
+BUILDING AND RUNNING:
+	List:
+		All project files should be in the same directory.
+		From the directory containing the .c source code and header files, compile the program:
+	 	$ make all 
+
+TESTING:
+	List:
+		Building this list in C was pretty interesting, when I was writing the class, after creating each method and thinking through the process of how they would work I then ran the TestList.c class and stepped through each method to be assured that they were doing what they were supposed to be. Once I had finished all the methods in List.c I added the test cases to the TestList.c and realized that I needed many more checks in my methods, like to check for a one element list, checking to see if the List is unitialized and so on like that. This was a good exercise in objected oriented practices in C.
+
+		Test cases for which my program works:
+		List Size  #Tests
+		1          10000
+		2          10000
+		3 		   10000
+		10000	   10000
+		20000	   10000
