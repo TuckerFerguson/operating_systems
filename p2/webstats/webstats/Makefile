@@ -14,7 +14,8 @@ JFLAGS=
 
 
 CC=gcc
-CFLAGS= -g   -Wall 
+CFLAGS= -g -Wall 
+#CFLAGS= -g  -DDEBUG -Wall 
 #CFLAGS= -O  -Wall  
 LIBS=-lpthread
 PROGS=webstats  #Webstats.class

@@ -28,6 +28,7 @@
 		EBB608DB19E9A0B800AB3944 /* error.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = error.c; sourceTree = "<group>"; };
 		EBB608DC19E9A0B800AB3944 /* ourhdr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ourhdr.h; sourceTree = "<group>"; };
 		EBB608E019E9A18300AB3944 /* webstats.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = webstats.c; sourceTree = "<group>"; };
+		EBB608E219E9CB7800AB3944 /* webstats.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = webstats.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +66,7 @@
 				EBB608E019E9A18300AB3944 /* webstats.c */,
 				EBB608DB19E9A0B800AB3944 /* error.c */,
 				EBB608DC19E9A0B800AB3944 /* ourhdr.h */,
+				EBB608E219E9CB7800AB3944 /* webstats.h */,
 			);
 			path = webstats;
 			sourceTree = "<group>";
@@ -169,6 +171,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_CFLAGS[arch=*]" = "-DDEBUG";
 				SDKROOT = macosx;
 			};
 			name = Debug;

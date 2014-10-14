@@ -57,6 +57,12 @@
             ReferencedContainer = "container:webstats.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "/Users/reubentanner/Google\ Drive/SCHOOL/os/repo/p2/webstats/webstats/test_file.txt"
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
