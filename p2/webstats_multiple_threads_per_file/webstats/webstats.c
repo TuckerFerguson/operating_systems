@@ -177,13 +177,14 @@ static int parse_line(char *line, const char *delim, char *field[])
 {
     char *next;
     int cnt=0;
-    
-    next = strtok(line, delim);
+	int *safe;
+	
+    next = strtok_r(line, delim, safe);
     while (next) {
         if (cnt == MAX_NUM_FIELDS-1) break;
         field[cnt] = (char *) malloc(strlen(next)+1);
         strcpy(field[cnt++],next);
-        next =strtok(NULL, delim);
+        next =strtok_r(NULL, delim, safe);
     }
     field[cnt] = (char *) 0; /* make the field array be null-terminated */
     
