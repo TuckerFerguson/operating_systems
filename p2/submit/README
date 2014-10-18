@@ -1,0 +1,60 @@
+****************
+* Project 2
+* CS 453
+* October 18, 2014
+* Reuben Tanner
+**************** 
+
+PROJECT OVERVIEW:
+Multi-threaded log processing program for Linux, Windows and in Java.
+
+
+SUBMITTED FILES:
+	├── README
+	├── ms-windows
+	│   └── webstats
+	│       ├── Webstats
+	│       │   ├── Webstats.vcxproj
+	│       │   ├── Webstats.vcxproj.filters
+	│       │   ├── Webstats.vcxproj.user
+	│       │   └── webstats.cpp
+	│       ├── Webstats.sln
+	│       └── Webstats.v12.suo
+	├── version1
+	│   ├── Makefile
+	│   ├── Webstats.java
+	│   ├── error.c
+	│   ├── ourhdr.h
+	│   └── webstats.c
+	└── version2
+	
+BUILDING AND RUNNING:
+	Leave files in the directory structure specified above, and type the following commands from the top level directory.
+
+	Compile:
+		make
+
+	Run:
+		./webstats file [file ...]
+		java Webstats file [file ...]
+
+PERFORMANCE:
+
+					real(s)	 total gets	 total failed gets	total mb transferred
+unix_single_thread				
+9 files				9.83		2587176			494436				185976
+				
+unix_multi_thread				
+9 files				4.49		2587176			494436				185976
+				
+java_single_thread				
+9 files				6.45		2587176			494436				185976
+				
+java_multi_thread				
+9 files				3.07		2587176			494436				185976
+				
+windows_single_thread				
+9 files				37.91		2587176			494436				185976
+				
+windows_multi_thread				
+9 files				48.66		2587176			494436				185976
