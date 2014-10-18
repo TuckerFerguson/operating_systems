@@ -136,7 +136,6 @@ static void initialize_webstats(struct stats * stats)
 	stats->local_gets = 0;
 	stats->failed_gets = 0;
 	stats->local_failed_gets = 0;
-	//    initialize_mutex();
 }
 
 static void initialize_mutex()
@@ -268,12 +267,15 @@ DWORD WINAPI process(LPVOID resrvd)
 			strcpy(linebuffer, "");
 		}
 		printf("Ending date: %s\n", end_date);
+		free(field);
+		free(linebuffer);
 		free(end_date);
 		combine_stats(local_stats);
 	}
 	else{
 		fprintf(stderr, "Line from file was null\n");
 	}
+	free(local_stats);
 	return NULL;
 }
 
