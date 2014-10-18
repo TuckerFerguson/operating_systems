@@ -127,15 +127,15 @@ static void free_tokens(int num, char *field[])
  * 		none
  */
 
-static void initialize_webstats()
+static void initialize_webstats(struct stats * stats)
 {
-	webstats.total_bytes = 0;
-	webstats.total_gets = 0;
-	webstats.local_bytes = 0;
-	webstats.local_gets = 0;
-	webstats.failed_gets = 0;
-	webstats.local_failed_gets = 0;
-    initialize_mutex();
+    stats->total_bytes = 0;
+	stats->total_gets = 0;
+    stats->local_bytes = 0;
+	stats->local_gets = 0;
+	stats->failed_gets = 0;
+	stats->local_failed_gets = 0;
+//    initialize_mutex();
 }
 
 static void initialize_mutex()
@@ -167,22 +167,34 @@ static void unlock_mutex()
  */
 #define BYTES_DOWNLOADED_FIELD 9
 #define HTTP_STATUS_CODE_FIELD 8
-static void update_webstats(int num, char **field)
+static void update_webstats(int num, char **field, struct stats * stats)
 {
-    lock_mutex();
+//    lock_mutex();
 	int bytes_downloaded = atoi(field[BYTES_DOWNLOADED_FIELD]);
 
-	webstats.total_gets++;
-	webstats.total_bytes += bytes_downloaded;
-	if (atoi(field[HTTP_STATUS_CODE_FIELD]) == 404) webstats.failed_gets++;
+	stats->total_gets++;
+	stats->total_bytes += bytes_downloaded;
+	if (atoi(field[HTTP_STATUS_CODE_FIELD]) == 404) stats->failed_gets++;
 
 	if ((strstr(field[0], "boisestate.edu") != NULL) || (strstr(field[0], "132.178") != NULL))
 	{
-		webstats.local_gets++;
-		webstats.local_bytes += bytes_downloaded;
+		stats->local_gets++;
+        stats->local_bytes += bytes_downloaded;
 		if (atoi(field[HTTP_STATUS_CODE_FIELD]) == 404)
-			webstats.local_failed_gets++;
+			stats->local_failed_gets++;
 	}
+//    unlock_mutex();
+}
+
+static void combine_stats(struct stats * stats)
+{
+    lock_mutex();
+    webstats.failed_gets += stats->failed_gets;
+    webstats.local_bytes += stats->local_bytes;
+    webstats.local_failed_gets += stats->local_failed_gets;
+    webstats.local_gets += stats->local_gets;
+    webstats.total_bytes += stats->total_bytes;
+    webstats.total_gets += stats->total_gets;
     unlock_mutex();
 }
 
@@ -228,6 +240,9 @@ void* process_file(void *ptr)
 	char **field = (char **) malloc(sizeof(char *) * MAX_NUM_FIELDS);
 	char *end_date = (char *) malloc(sizeof(char) * MAX_LINE_SIZE);
 
+    struct stats * local_stats = (struct stats *)malloc(sizeof(struct stats));
+    initialize_webstats(local_stats);
+    
 	fprintf(stderr,"%s: processing log file %s\n", program_name, filename);
 	FILE *fin = fopen(filename,"r");
 	if (fin == NULL)
@@ -239,7 +254,7 @@ void* process_file(void *ptr)
 	if (s != NULL)
 	{
 		int num = parse_line(linebuffer, " []\"", field);
-		update_webstats(num, field);
+		update_webstats(num, field, local_stats);
 		printf("Starting date: %s\n",field[3]);
 		free_tokens(num, field);
 
@@ -247,12 +262,14 @@ void* process_file(void *ptr)
 		{
 			int num = parse_line(linebuffer, " []\"", field);
 			strcpy(end_date, field[3]);
-			update_webstats(num, field);
+			update_webstats(num, field, local_stats);
 			free_tokens(num, field);
 			strcpy(linebuffer,"");
 		}
 		printf("Ending date: %s\n", end_date);
 		free(end_date);
+        
+        combine_stats(local_stats);
 	}
     return NULL;
 }
@@ -289,7 +306,8 @@ int main(int argc, char **argv)
 	program_name = (char *) malloc(strlen(argv[0])+1);
 	strcpy(program_name, argv[0]);
 
-	initialize_webstats();
+	initialize_webstats(&webstats);
+    initialize_mutex();
     
     pthread_t threads[MAX_THREADS];
     
