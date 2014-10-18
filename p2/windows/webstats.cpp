@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <pthread.h>
+#include <iostream>
 
 /*
 	Generate some web statistics  based on access logs from the Apache web server. 
