@@ -29,7 +29,7 @@ SUBMITTED FILES:
 	└── version2
 	
 BUILDING AND RUNNING:
-	Leave files in the directory structure specified above, and type the following commands from the top level directory.
+	Leave files in the directory structure specified above, and from the root of the directory "version1" type the following command.
 
 	Compile:
 		make
@@ -53,7 +53,7 @@ java_single_thread
 java_multi_thread				
 9 files				3.07		2587176			494436				185976
 				
-windows_single_thread				
+windows_single_thread					
 9 files				37.91		2587176			494436				185976
 				
 windows_multi_thread				
