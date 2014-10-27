@@ -1,0 +1,327 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EBFE3A2E19FEEB71001051FA /* List.c in Sources */ = {isa = PBXBuildFile; fileRef = EBFE3A2019FEEB71001051FA /* List.c */; };
+		EBFE3A2F19FEEB71001051FA /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = EBFE3A2219FEEB71001051FA /* Makefile */; };
+		EBFE3A3019FEEB71001051FA /* Node.c in Sources */ = {isa = PBXBuildFile; fileRef = EBFE3A2319FEEB71001051FA /* Node.c */; };
+		EBFE3A3119FEEB71001051FA /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = EBFE3A2519FEEB71001051FA /* Makefile */; };
+		EBFE3A3219FEEB71001051FA /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = EBFE3A2819FEEB71001051FA /* Makefile */; };
+		EBFE3A3319FEEB71001051FA /* Object.c in Sources */ = {isa = PBXBuildFile; fileRef = EBFE3A2919FEEB71001051FA /* Object.c */; };
+		EBFE3A3419FEEB71001051FA /* RandomTestList.c in Sources */ = {isa = PBXBuildFile; fileRef = EBFE3A2B19FEEB71001051FA /* RandomTestList.c */; };
+		EBFE3A3519FEEB71001051FA /* SimpleTestList.c in Sources */ = {isa = PBXBuildFile; fileRef = EBFE3A2C19FEEB71001051FA /* SimpleTestList.c */; };
+		EBFE3A3619FEEB71001051FA /* UnitTestList.c in Sources */ = {isa = PBXBuildFile; fileRef = EBFE3A2D19FEEB71001051FA /* UnitTestList.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EBFE3A0C19FEEB22001051FA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		EBFE3A0E19FEEB22001051FA /* p3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = p3; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBFE3A1919FEEB71001051FA /* doxygen-config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "doxygen-config"; sourceTree = "<group>"; };
+		EBFE3A1B19FEEB71001051FA /* .hidden */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .hidden; sourceTree = "<group>"; };
+		EBFE3A1D19FEEB71001051FA /* .hidden */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .hidden; sourceTree = "<group>"; };
+		EBFE3A1F19FEEB71001051FA /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		EBFE3A2019FEEB71001051FA /* List.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = List.c; sourceTree = "<group>"; };
+		EBFE3A2119FEEB71001051FA /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
+		EBFE3A2219FEEB71001051FA /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		EBFE3A2319FEEB71001051FA /* Node.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Node.c; sourceTree = "<group>"; };
+		EBFE3A2419FEEB71001051FA /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		EBFE3A2519FEEB71001051FA /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		EBFE3A2619FEEB71001051FA /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		EBFE3A2819FEEB71001051FA /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		EBFE3A2919FEEB71001051FA /* Object.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Object.c; sourceTree = "<group>"; };
+		EBFE3A2A19FEEB71001051FA /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
+		EBFE3A2B19FEEB71001051FA /* RandomTestList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RandomTestList.c; sourceTree = "<group>"; };
+		EBFE3A2C19FEEB71001051FA /* SimpleTestList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SimpleTestList.c; sourceTree = "<group>"; };
+		EBFE3A2D19FEEB71001051FA /* UnitTestList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = UnitTestList.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EBFE3A0B19FEEB22001051FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EBFE3A0519FEEB22001051FA = {
+			isa = PBXGroup;
+			children = (
+				EBFE3A1019FEEB22001051FA /* p3 */,
+				EBFE3A0F19FEEB22001051FA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EBFE3A0F19FEEB22001051FA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EBFE3A0E19FEEB22001051FA /* p3 */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EBFE3A1019FEEB22001051FA /* p3 */ = {
+			isa = PBXGroup;
+			children = (
+				EBFE3A1819FEEB71001051FA /* list_src */,
+			);
+			path = p3;
+			sourceTree = "<group>";
+		};
+		EBFE3A1819FEEB71001051FA /* list_src */ = {
+			isa = PBXGroup;
+			children = (
+				EBFE3A1919FEEB71001051FA /* doxygen-config */,
+				EBFE3A1A19FEEB71001051FA /* include */,
+				EBFE3A1C19FEEB71001051FA /* lib */,
+				EBFE3A1E19FEEB71001051FA /* libsrc */,
+				EBFE3A2519FEEB71001051FA /* Makefile */,
+				EBFE3A2619FEEB71001051FA /* README */,
+				EBFE3A2719FEEB71001051FA /* testsuite */,
+			);
+			path = list_src;
+			sourceTree = "<group>";
+		};
+		EBFE3A1A19FEEB71001051FA /* include */ = {
+			isa = PBXGroup;
+			children = (
+				EBFE3A1B19FEEB71001051FA /* .hidden */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		EBFE3A1C19FEEB71001051FA /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				EBFE3A1D19FEEB71001051FA /* .hidden */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		EBFE3A1E19FEEB71001051FA /* libsrc */ = {
+			isa = PBXGroup;
+			children = (
+				EBFE3A1F19FEEB71001051FA /* common.h */,
+				EBFE3A2019FEEB71001051FA /* List.c */,
+				EBFE3A2119FEEB71001051FA /* List.h */,
+				EBFE3A2219FEEB71001051FA /* Makefile */,
+				EBFE3A2319FEEB71001051FA /* Node.c */,
+				EBFE3A2419FEEB71001051FA /* Node.h */,
+			);
+			path = libsrc;
+			sourceTree = "<group>";
+		};
+		EBFE3A2719FEEB71001051FA /* testsuite */ = {
+			isa = PBXGroup;
+			children = (
+				EBFE3A2819FEEB71001051FA /* Makefile */,
+				EBFE3A2919FEEB71001051FA /* Object.c */,
+				EBFE3A2A19FEEB71001051FA /* Object.h */,
+				EBFE3A2B19FEEB71001051FA /* RandomTestList.c */,
+				EBFE3A2C19FEEB71001051FA /* SimpleTestList.c */,
+				EBFE3A2D19FEEB71001051FA /* UnitTestList.c */,
+			);
+			path = testsuite;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EBFE3A0D19FEEB22001051FA /* p3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBFE3A1519FEEB22001051FA /* Build configuration list for PBXNativeTarget "p3" */;
+			buildPhases = (
+				EBFE3A0A19FEEB22001051FA /* Sources */,
+				EBFE3A0B19FEEB22001051FA /* Frameworks */,
+				EBFE3A0C19FEEB22001051FA /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = p3;
+			productName = p3;
+			productReference = EBFE3A0E19FEEB22001051FA /* p3 */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EBFE3A0619FEEB22001051FA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Reuben Tanner";
+				TargetAttributes = {
+					EBFE3A0D19FEEB22001051FA = {
+						CreatedOnToolsVersion = 6.1;
+					};
+				};
+			};
+			buildConfigurationList = EBFE3A0919FEEB22001051FA /* Build configuration list for PBXProject "p3" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EBFE3A0519FEEB22001051FA;
+			productRefGroup = EBFE3A0F19FEEB22001051FA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EBFE3A0D19FEEB22001051FA /* p3 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EBFE3A0A19FEEB22001051FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBFE3A3219FEEB71001051FA /* Makefile in Sources */,
+				EBFE3A3119FEEB71001051FA /* Makefile in Sources */,
+				EBFE3A3519FEEB71001051FA /* SimpleTestList.c in Sources */,
+				EBFE3A2F19FEEB71001051FA /* Makefile in Sources */,
+				EBFE3A3019FEEB71001051FA /* Node.c in Sources */,
+				EBFE3A3319FEEB71001051FA /* Object.c in Sources */,
+				EBFE3A3419FEEB71001051FA /* RandomTestList.c in Sources */,
+				EBFE3A2E19FEEB71001051FA /* List.c in Sources */,
+				EBFE3A3619FEEB71001051FA /* UnitTestList.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		EBFE3A1319FEEB22001051FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		EBFE3A1419FEEB22001051FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		EBFE3A1619FEEB22001051FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EBFE3A1719FEEB22001051FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EBFE3A0919FEEB22001051FA /* Build configuration list for PBXProject "p3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBFE3A1319FEEB22001051FA /* Debug */,
+				EBFE3A1419FEEB22001051FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBFE3A1519FEEB22001051FA /* Build configuration list for PBXNativeTarget "p3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBFE3A1619FEEB22001051FA /* Debug */,
+				EBFE3A1719FEEB22001051FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EBFE3A0619FEEB22001051FA /* Project object */;
+}
