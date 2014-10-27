@@ -22,6 +22,7 @@ ListPtr testlist;
 
 int testCount = 0;
 int passCount = 0;
+int listSize = 0;
 
 void printTestInfo(char* testName, char *info)
 {
@@ -39,7 +40,7 @@ void printTestResult(char* testName, Boolean passed)
 void beforeTest(char* testName)
 {
 	printTestInfo(testName, "Running...");
-	testlist = createList(compareTo, toString, freeObject, 50);
+	testlist = createList(compareTo, toString, freeObject, listSize);
 	testCount++;
 }
 
@@ -287,10 +288,11 @@ Boolean removeNodeTest()
     return TRUE;
 }
 
-void runUnitTests()
+void runUnitTests(int listSize)
 {
 	Boolean result;
 	char *testName;
+    listSize = listSize;
 
 	testName = "addAtFrontWithNoNodes";
 	beforeTest(testName);
@@ -359,6 +361,8 @@ void runUnitTests()
 
 int main(int argc, char *argv[])
 {
-	runUnitTests();
+    if (argc == 1)
+        fprintf(stderr, "Usage: UnitTestList <size-of-lize>\n");
+	runUnitTests(atoi(argv[1]));
 	exit(0);
 }
