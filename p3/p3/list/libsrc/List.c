@@ -85,7 +85,7 @@ static void _freeList(const ListPtr list) {
         free(list);
         return;
     }
-    if (list->size < 0 || (list->head != NULL && list->head->data == NULL) || (list->tail!= NULL && list->tail->data == NULL))
+    if (list->size < 0 || (list->head != NULL && list->head->obj == NULL) || (list->tail!= NULL && list->tail->obj == NULL))
         return;
     
     NodePtr temp = list->head;
@@ -160,7 +160,7 @@ static void _addAtFront(ListPtr list, NodePtr node)
         return;
     if (node == NULL )
         return;
-    if (list->size < 0 || (list->head != NULL && list->head->data == NULL) || (list->tail != NULL && list->tail->data == NULL))
+    if (list->size < 0 || (list->head != NULL && list->head->obj == NULL) || (list->tail != NULL && list->tail->obj == NULL))
         return;
     if (list->size == 0 && (list->tail == NULL && list->head == NULL )) {
         node->next = NULL;
@@ -201,7 +201,7 @@ static void _addAtRear(ListPtr list, NodePtr node)
         return;
     if (node == NULL )
         return;
-    if (list->size < 0 || (list->head != NULL && list->head->data == NULL) || (list->tail != NULL && list->tail->data == NULL))
+    if (list->size < 0 || (list->head != NULL && list->head->obj == NULL) || (list->tail != NULL && list->tail->obj == NULL))
         return;
     if (list->size == 0 && (list->tail == NULL && list->head == NULL )) {
         node->next = NULL;
@@ -231,6 +231,7 @@ NodePtr removeFront(ListPtr list)
 {
     pthread_mutex_lock(&(list->lock));
     NodePtr removed_node = _removeFront(list);
+    pthread_cond_signal(&(list->condition));
     pthread_mutex_unlock(&(list->lock));
     return removed_node;
 }
@@ -269,6 +270,7 @@ NodePtr removeRear(ListPtr list)
 {
     pthread_mutex_lock(&(list->lock));
     NodePtr removed_node = _removeRear(list);
+    pthread_cond_signal(&(list->condition));
     pthread_mutex_unlock(&(list->lock));
     return removed_node;
 }
@@ -356,7 +358,7 @@ static NodePtr _search(const ListPtr list, const void * searchFor)
 {
     if (list == NULL )
         return NULL ;
-    if (list->size < 0 || (list->head != NULL && list->head->data == NULL) || (list->tail != NULL && list->tail->data == NULL))
+    if (list->size < 0 || (list->head != NULL && list->head->obj == NULL) || (list->tail != NULL && list->tail->obj == NULL))
         return NULL;
     if (list ->size == 0 && list->head == NULL && list->tail ==NULL)
         return NULL;
@@ -365,7 +367,7 @@ static NodePtr _search(const ListPtr list, const void * searchFor)
     
     NodePtr temp = list->head;
     while (temp != NULL ) {
-        if (list->compareTo(searchFor, temp->data))
+        if (list->compareTo(searchFor, temp->obj))
             return temp;
         else
             temp = temp->next;
@@ -389,7 +391,7 @@ static void _reverseList(ListPtr L)
         return;
     if (L ->size == 0 && L->head == NULL && L->tail ==NULL)
         return;
-    if (L->size < 0 || (L->head != NULL && L->head->data == NULL) || (L->tail != NULL && L->tail->data == NULL))
+    if (L->size < 0 || (L->head != NULL && L->head->obj == NULL) || (L->tail != NULL && L->tail->obj == NULL))
         return;
     L->tail = L->head;
     L->head  = reverse (L->head);
@@ -428,7 +430,7 @@ static void _printList(ListPtr L)
 {
     if (L == NULL )
         return;
-    if (L->size < 0 || (L->head != NULL && L->head->data == NULL) || (L->tail != NULL && L->tail->data == NULL))
+    if (L->size < 0 || (L->head != NULL && L->head->obj == NULL) || (L->tail != NULL && L->tail->obj == NULL))
         return;
     if (L ->size == 0 && L->head == NULL && L->tail ==NULL)
         return;
@@ -443,11 +445,16 @@ static void print(NodePtr node, char * (*toString)(const void *))
 	char *output;
     NodePtr temp = node;
 	while (temp) {
-		output = (*toString)(temp->data);
+		output = (*toString)(temp->obj);
 		printf(" %s \n",output);
 		free(output);
 		temp = temp->next;
 	}
+}
+
+void finishUp(ListPtr list)
+{
+    pthread_cond_broadcast(&(list->condition));
 }
 
 

@@ -13,12 +13,12 @@
 * description: one of the more generic methods in this project,
 * this will never have to be modified.
 */
-NodePtr createNode(const void *obj)
+NodePtr createNode(void *obj)
 {
 	NodePtr newNode = (NodePtr) malloc (sizeof(Node));
 	newNode->next = NULL;
 	newNode->prev = NULL;
-	newNode->data = obj;
+	newNode->obj = obj;
 	return newNode;
 }
 
@@ -31,7 +31,7 @@ NodePtr createNode(const void *obj)
 void freeNode (const NodePtr node, void (*freeObject)(const void *))
 {
 	if (node == NULL) return;
-	(*freeObject)(node->data);
+	(*freeObject)(node->obj);
 	free(node);
 }
 

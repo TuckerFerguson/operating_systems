@@ -144,6 +144,8 @@ void reverseList(ListPtr L);
  */
 void printList(const ListPtr L);
 
+void finishUp(ListPtr l);
+
 
 #endif /* __LIST_H */
 

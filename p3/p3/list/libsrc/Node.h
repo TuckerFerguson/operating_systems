@@ -9,12 +9,12 @@ typedef struct node Node;
 typedef struct node * NodePtr;
 
 struct node {
-	void *data;
+	void *obj;
 	NodePtr next;
 	NodePtr prev;
 };
 
-NodePtr createNode (const void *data);
+NodePtr createNode (void *obj);
 void freeNode(const NodePtr node, void (*freeObject)(const void *));
 
 #endif /* __NODE_H */

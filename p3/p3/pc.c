@@ -11,13 +11,13 @@
 #include <unistd.h>
 #include <pthread.h>
 #include "Item.h"
-#include <List.h>
-#include <Node.h>
+#include "List.h"
+#include "Node.h"
 
 #define TRUE 1
 #define FALSE 0
 
-#define DEBUG 0
+#define DEBUG 1
 
 
 // prototypes for the producer and consumer thread's main functions.
@@ -160,7 +160,7 @@ void *producer(void *ptr)
 		thread_number = counter1;
 	pthread_mutex_unlock(&mutex1);
 
-	if (DEBUG) printf("I am producer thread %d (with thread id = %lX)\n", thread_number, mytid);
+	if (DEBUG) printf("I am producer thread %d (with thread id = %lX)\n", thread_number, (unsigned long)mytid);
 
 	/* now produce the items and add them to the pool */
 	i = 0;
@@ -203,7 +203,7 @@ void *consumer(void *ptr)
 		thread_number = counter2;
 	pthread_mutex_unlock(&mutex2);
 
-	if (DEBUG) printf("I am consumer thread %d (with thread id = %lX)\n", thread_number, mytid);
+	if (DEBUG) printf("I am consumer thread %d (with thread id = %lX)\n", thread_number, (unsigned long)mytid);
 
 	/* now consume the items by removing them from the end of the pool and
 	   displaying them */
@@ -219,7 +219,7 @@ void *consumer(void *ptr)
 		/* print item using toString method */
 		if (node) {
 			itemString = pool->toString(node->obj);
-			/*printf("Consumer %d consumed item %s\n", thread_number, itemString);*/
+			if (DEBUG) printf("Consumer %d consumed item %s\n", thread_number, itemString);
 			fflush(NULL);
 			free(itemString);
 			freeNode(node, freeItem);
