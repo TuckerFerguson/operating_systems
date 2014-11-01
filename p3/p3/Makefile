@@ -6,8 +6,13 @@ LFLAGS=-L$(LIBS) -lpthread -lgenericList
 CFLAGS=-Wall -g -I$(INCLUDE)
 DEBUG=
 
+all: library pc
+
+library:
+	cd list; make;
+
 pc: pc.o  Item.o Item.h
 	$(CC) $(CFLAGS) -o $@ pc.o Item.o  $(LFLAGS)
 
 clean:
-	/bin/rm -f *.o pc
+	cd list; make clean; cd ..; /bin/rm -f *.o pc
