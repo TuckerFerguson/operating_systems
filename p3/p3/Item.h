@@ -2,7 +2,6 @@
 #ifndef __ITEM_H
 #define __ITEM_H
 
-#include <malloc.h>
 #include <stdio.h>
 
 typedef struct item Item;
@@ -14,10 +13,9 @@ struct item {
 };
 
 ItemPtr createItem(int index, int producer);
-void setItemKey(ItemPtr item, int id);
-unsigned long int getItemKey(void *);
-char *toItemString(void *);
-void freeItem(void *);
+int compareToItem(const void *, const void *);
+char *toStringItem(const void *);
+void freeItem(const void *);
 
 
 

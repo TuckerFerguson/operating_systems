@@ -9,20 +9,14 @@ ItemPtr createItem(int index, int producer)
 	return item;
 }
 
-void setItemKey(ItemPtr item, int id) 
-{ 
-	item->id = id; 
-}
-
-
-unsigned long int getItemKey(void *obj) 
-{ 
-	return ((ItemPtr)obj)->id;
+int compareToItem(const void *obj1, const void *obj2)
+{
+	return ((ItemPtr)obj1)->id - ((ItemPtr)obj2)->id;
 }
 
 #define ITEM_STRING_SIZE 128
 
-char *toItemString(void *obj)
+char *toStringItem(const void *obj)
 {
 	ItemPtr item = (ItemPtr) obj;
 	char *buffer = (char *) malloc(sizeof(char)*ITEM_STRING_SIZE);
@@ -30,7 +24,7 @@ char *toItemString(void *obj)
 	return buffer;
 }
 
-void freeItem(void *obj) 
+void freeItem(const void *obj) 
 {
 	free((ItemPtr) obj);
 }
