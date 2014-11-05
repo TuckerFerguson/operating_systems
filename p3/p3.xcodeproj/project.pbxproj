@@ -7,15 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EBFE3A2E19FEEB71001051FA /* List.c in Sources */ = {isa = PBXBuildFile; fileRef = EBFE3A2019FEEB71001051FA /* List.c */; };
-		EBFE3A2F19FEEB71001051FA /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = EBFE3A2219FEEB71001051FA /* Makefile */; };
-		EBFE3A3019FEEB71001051FA /* Node.c in Sources */ = {isa = PBXBuildFile; fileRef = EBFE3A2319FEEB71001051FA /* Node.c */; };
-		EBFE3A3119FEEB71001051FA /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = EBFE3A2519FEEB71001051FA /* Makefile */; };
-		EBFE3A3219FEEB71001051FA /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = EBFE3A2819FEEB71001051FA /* Makefile */; };
-		EBFE3A3319FEEB71001051FA /* Object.c in Sources */ = {isa = PBXBuildFile; fileRef = EBFE3A2919FEEB71001051FA /* Object.c */; };
-		EBFE3A3419FEEB71001051FA /* RandomTestList.c in Sources */ = {isa = PBXBuildFile; fileRef = EBFE3A2B19FEEB71001051FA /* RandomTestList.c */; };
-		EBFE3A3519FEEB71001051FA /* SimpleTestList.c in Sources */ = {isa = PBXBuildFile; fileRef = EBFE3A2C19FEEB71001051FA /* SimpleTestList.c */; };
-		EBFE3A3619FEEB71001051FA /* UnitTestList.c in Sources */ = {isa = PBXBuildFile; fileRef = EBFE3A2D19FEEB71001051FA /* UnitTestList.c */; };
+		EBDED3561A0562E80079A971 /* Item.c in Sources */ = {isa = PBXBuildFile; fileRef = EBDED3391A0562E80079A971 /* Item.c */; };
+		EBDED3621A0562E80079A971 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = EBDED3531A0562E80079A971 /* Makefile */; };
+		EBDED3631A0562E80079A971 /* pc.c in Sources */ = {isa = PBXBuildFile; fileRef = EBDED3541A0562E80079A971 /* pc.c */; };
+		EBDED37C1A0569720079A971 /* List.c in Sources */ = {isa = PBXBuildFile; fileRef = EBDED36C1A0569720079A971 /* List.c */; };
+		EBDED37F1A0569720079A971 /* Node.c in Sources */ = {isa = PBXBuildFile; fileRef = EBDED3701A0569720079A971 /* Node.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,24 +27,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EBDED3391A0562E80079A971 /* Item.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Item.c; path = p3/Item.c; sourceTree = SOURCE_ROOT; };
+		EBDED33A1A0562E80079A971 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Item.h; path = p3/Item.h; sourceTree = SOURCE_ROOT; };
+		EBDED3531A0562E80079A971 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; name = Makefile; path = p3/Makefile; sourceTree = SOURCE_ROOT; };
+		EBDED3541A0562E80079A971 /* pc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pc.c; path = p3/pc.c; sourceTree = SOURCE_ROOT; };
+		EBDED3551A0562E80079A971 /* test.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = test.sh; path = p3/test.sh; sourceTree = SOURCE_ROOT; };
+		EBDED36B1A0569720079A971 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = common.h; path = list/libsrc/common.h; sourceTree = "<group>"; };
+		EBDED36C1A0569720079A971 /* List.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = List.c; path = list/libsrc/List.c; sourceTree = "<group>"; };
+		EBDED36D1A0569720079A971 /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = List.h; path = list/libsrc/List.h; sourceTree = "<group>"; };
+		EBDED3701A0569720079A971 /* Node.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Node.c; path = list/libsrc/Node.c; sourceTree = "<group>"; };
+		EBDED3711A0569720079A971 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Node.h; path = list/libsrc/Node.h; sourceTree = "<group>"; };
 		EBFE3A0E19FEEB22001051FA /* p3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = p3; sourceTree = BUILT_PRODUCTS_DIR; };
-		EBFE3A1919FEEB71001051FA /* doxygen-config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "doxygen-config"; sourceTree = "<group>"; };
-		EBFE3A1B19FEEB71001051FA /* .hidden */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .hidden; sourceTree = "<group>"; };
-		EBFE3A1D19FEEB71001051FA /* .hidden */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .hidden; sourceTree = "<group>"; };
-		EBFE3A1F19FEEB71001051FA /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
-		EBFE3A2019FEEB71001051FA /* List.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = List.c; sourceTree = "<group>"; };
-		EBFE3A2119FEEB71001051FA /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
-		EBFE3A2219FEEB71001051FA /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		EBFE3A2319FEEB71001051FA /* Node.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Node.c; sourceTree = "<group>"; };
-		EBFE3A2419FEEB71001051FA /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
-		EBFE3A2519FEEB71001051FA /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		EBFE3A2619FEEB71001051FA /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
-		EBFE3A2819FEEB71001051FA /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		EBFE3A2919FEEB71001051FA /* Object.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Object.c; sourceTree = "<group>"; };
-		EBFE3A2A19FEEB71001051FA /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
-		EBFE3A2B19FEEB71001051FA /* RandomTestList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RandomTestList.c; sourceTree = "<group>"; };
-		EBFE3A2C19FEEB71001051FA /* SimpleTestList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SimpleTestList.c; sourceTree = "<group>"; };
-		EBFE3A2D19FEEB71001051FA /* UnitTestList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = UnitTestList.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,65 +70,18 @@
 		EBFE3A1019FEEB22001051FA /* p3 */ = {
 			isa = PBXGroup;
 			children = (
-				EBFE3A1819FEEB71001051FA /* list_src */,
+				EBDED36B1A0569720079A971 /* common.h */,
+				EBDED36C1A0569720079A971 /* List.c */,
+				EBDED36D1A0569720079A971 /* List.h */,
+				EBDED3701A0569720079A971 /* Node.c */,
+				EBDED3711A0569720079A971 /* Node.h */,
+				EBDED3391A0562E80079A971 /* Item.c */,
+				EBDED33A1A0562E80079A971 /* Item.h */,
+				EBDED3531A0562E80079A971 /* Makefile */,
+				EBDED3541A0562E80079A971 /* pc.c */,
+				EBDED3551A0562E80079A971 /* test.sh */,
 			);
 			path = p3;
-			sourceTree = "<group>";
-		};
-		EBFE3A1819FEEB71001051FA /* list_src */ = {
-			isa = PBXGroup;
-			children = (
-				EBFE3A1919FEEB71001051FA /* doxygen-config */,
-				EBFE3A1A19FEEB71001051FA /* include */,
-				EBFE3A1C19FEEB71001051FA /* lib */,
-				EBFE3A1E19FEEB71001051FA /* libsrc */,
-				EBFE3A2519FEEB71001051FA /* Makefile */,
-				EBFE3A2619FEEB71001051FA /* README */,
-				EBFE3A2719FEEB71001051FA /* testsuite */,
-			);
-			path = list_src;
-			sourceTree = "<group>";
-		};
-		EBFE3A1A19FEEB71001051FA /* include */ = {
-			isa = PBXGroup;
-			children = (
-				EBFE3A1B19FEEB71001051FA /* .hidden */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		EBFE3A1C19FEEB71001051FA /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				EBFE3A1D19FEEB71001051FA /* .hidden */,
-			);
-			path = lib;
-			sourceTree = "<group>";
-		};
-		EBFE3A1E19FEEB71001051FA /* libsrc */ = {
-			isa = PBXGroup;
-			children = (
-				EBFE3A1F19FEEB71001051FA /* common.h */,
-				EBFE3A2019FEEB71001051FA /* List.c */,
-				EBFE3A2119FEEB71001051FA /* List.h */,
-				EBFE3A2219FEEB71001051FA /* Makefile */,
-				EBFE3A2319FEEB71001051FA /* Node.c */,
-				EBFE3A2419FEEB71001051FA /* Node.h */,
-			);
-			path = libsrc;
-			sourceTree = "<group>";
-		};
-		EBFE3A2719FEEB71001051FA /* testsuite */ = {
-			isa = PBXGroup;
-			children = (
-				EBFE3A2819FEEB71001051FA /* Makefile */,
-				EBFE3A2919FEEB71001051FA /* Object.c */,
-				EBFE3A2A19FEEB71001051FA /* Object.h */,
-				EBFE3A2B19FEEB71001051FA /* RandomTestList.c */,
-				EBFE3A2C19FEEB71001051FA /* SimpleTestList.c */,
-				EBFE3A2D19FEEB71001051FA /* UnitTestList.c */,
-			);
-			path = testsuite;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,15 +140,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBFE3A3219FEEB71001051FA /* Makefile in Sources */,
-				EBFE3A3119FEEB71001051FA /* Makefile in Sources */,
-				EBFE3A3519FEEB71001051FA /* SimpleTestList.c in Sources */,
-				EBFE3A2F19FEEB71001051FA /* Makefile in Sources */,
-				EBFE3A3019FEEB71001051FA /* Node.c in Sources */,
-				EBFE3A3319FEEB71001051FA /* Object.c in Sources */,
-				EBFE3A3419FEEB71001051FA /* RandomTestList.c in Sources */,
-				EBFE3A2E19FEEB71001051FA /* List.c in Sources */,
-				EBFE3A3619FEEB71001051FA /* UnitTestList.c in Sources */,
+				EBDED3631A0562E80079A971 /* pc.c in Sources */,
+				EBDED3561A0562E80079A971 /* Item.c in Sources */,
+				EBDED37F1A0569720079A971 /* Node.c in Sources */,
+				EBDED3621A0562E80079A971 /* Makefile in Sources */,
+				EBDED37C1A0569720079A971 /* List.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +258,7 @@
 				EBFE3A1719FEEB22001051FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

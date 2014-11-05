@@ -7,7 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EBDED3941A05A5B50079A971 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = EBDED3931A05A5B50079A971 /* main.c */; };
+		EBDED3C81A05A64C0079A971 /* CommandParser.c in Sources */ = {isa = PBXBuildFile; fileRef = EBDED39A1A05A64C0079A971 /* CommandParser.c */; };
+		EBDED3C91A05A64C0079A971 /* DirectoryTraverser.c in Sources */ = {isa = PBXBuildFile; fileRef = EBDED39D1A05A64C0079A971 /* DirectoryTraverser.c */; };
+		EBDED3CA1A05A64C0079A971 /* error.c in Sources */ = {isa = PBXBuildFile; fileRef = EBDED3A01A05A64C0079A971 /* error.c */; };
+		EBDED3CB1A05A64C0079A971 /* Job.c in Sources */ = {isa = PBXBuildFile; fileRef = EBDED3A21A05A64C0079A971 /* Job.c */; };
+		EBDED3CC1A05A64C0079A971 /* JobManager.c in Sources */ = {isa = PBXBuildFile; fileRef = EBDED3A41A05A64C0079A971 /* JobManager.c */; };
+		EBDED3CD1A05A64C0079A971 /* List.c in Sources */ = {isa = PBXBuildFile; fileRef = EBDED3AE1A05A64C0079A971 /* List.c */; };
+		EBDED3CE1A05A64C0079A971 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = EBDED3B01A05A64C0079A971 /* Makefile */; };
+		EBDED3CF1A05A64C0079A971 /* Node.c in Sources */ = {isa = PBXBuildFile; fileRef = EBDED3B11A05A64C0079A971 /* Node.c */; };
+		EBDED3D01A05A64C0079A971 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = EBDED3B31A05A64C0079A971 /* Makefile */; };
+		EBDED3D11A05A64C0079A971 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = EBDED3B61A05A64C0079A971 /* Makefile */; };
+		EBDED3D21A05A64C0079A971 /* Object.c in Sources */ = {isa = PBXBuildFile; fileRef = EBDED3B71A05A64C0079A971 /* Object.c */; };
+		EBDED3D31A05A64C0079A971 /* RandomTestList.c in Sources */ = {isa = PBXBuildFile; fileRef = EBDED3B91A05A64C0079A971 /* RandomTestList.c */; };
+		EBDED3D41A05A64C0079A971 /* SimpleTestList.c in Sources */ = {isa = PBXBuildFile; fileRef = EBDED3BA1A05A64C0079A971 /* SimpleTestList.c */; };
+		EBDED3D51A05A64C0079A971 /* UnitTestList.c in Sources */ = {isa = PBXBuildFile; fileRef = EBDED3BB1A05A64C0079A971 /* UnitTestList.c */; };
+		EBDED3D71A05A64C0079A971 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = EBDED3BD1A05A64C0079A971 /* Makefile */; };
+		EBDED3D81A05A64C0079A971 /* shell.c in Sources */ = {isa = PBXBuildFile; fileRef = EBDED3C31A05A64C0079A971 /* shell.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +39,43 @@
 
 /* Begin PBXFileReference section */
 		EBDED3901A05A5B50079A971 /* shell */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = shell; sourceTree = BUILT_PRODUCTS_DIR; };
-		EBDED3931A05A5B50079A971 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		EBDED39A1A05A64C0079A971 /* CommandParser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CommandParser.c; sourceTree = "<group>"; };
+		EBDED39B1A05A64C0079A971 /* CommandParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandParser.h; sourceTree = "<group>"; };
+		EBDED39C1A05A64C0079A971 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		EBDED39D1A05A64C0079A971 /* DirectoryTraverser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DirectoryTraverser.c; sourceTree = "<group>"; };
+		EBDED39E1A05A64C0079A971 /* DirectoryTraverser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectoryTraverser.h; sourceTree = "<group>"; };
+		EBDED39F1A05A64C0079A971 /* doxygen-config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "doxygen-config"; sourceTree = "<group>"; };
+		EBDED3A01A05A64C0079A971 /* error.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = error.c; sourceTree = "<group>"; };
+		EBDED3A11A05A64C0079A971 /* git.log */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = git.log; sourceTree = "<group>"; };
+		EBDED3A21A05A64C0079A971 /* Job.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Job.c; sourceTree = "<group>"; };
+		EBDED3A31A05A64C0079A971 /* Job.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Job.h; sourceTree = "<group>"; };
+		EBDED3A41A05A64C0079A971 /* JobManager.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = JobManager.c; sourceTree = "<group>"; };
+		EBDED3A51A05A64C0079A971 /* JobManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobManager.h; sourceTree = "<group>"; };
+		EBDED3A71A05A64C0079A971 /* doxygen-config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "doxygen-config"; sourceTree = "<group>"; };
+		EBDED3A91A05A64C0079A971 /* .hidden */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .hidden; sourceTree = "<group>"; };
+		EBDED3AB1A05A64C0079A971 /* .hidden */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .hidden; sourceTree = "<group>"; };
+		EBDED3AD1A05A64C0079A971 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		EBDED3AE1A05A64C0079A971 /* List.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = List.c; sourceTree = "<group>"; };
+		EBDED3AF1A05A64C0079A971 /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
+		EBDED3B01A05A64C0079A971 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		EBDED3B11A05A64C0079A971 /* Node.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Node.c; sourceTree = "<group>"; };
+		EBDED3B21A05A64C0079A971 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		EBDED3B31A05A64C0079A971 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		EBDED3B41A05A64C0079A971 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		EBDED3B61A05A64C0079A971 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		EBDED3B71A05A64C0079A971 /* Object.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Object.c; sourceTree = "<group>"; };
+		EBDED3B81A05A64C0079A971 /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
+		EBDED3B91A05A64C0079A971 /* RandomTestList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RandomTestList.c; sourceTree = "<group>"; };
+		EBDED3BA1A05A64C0079A971 /* SimpleTestList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SimpleTestList.c; sourceTree = "<group>"; };
+		EBDED3BB1A05A64C0079A971 /* UnitTestList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = UnitTestList.c; sourceTree = "<group>"; };
+		EBDED3BD1A05A64C0079A971 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		EBDED3BE1A05A64C0079A971 /* ourhdr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ourhdr.h; sourceTree = "<group>"; };
+		EBDED3BF1A05A64C0079A971 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		EBDED3C01A05A64C0079A971 /* set_git_version.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = set_git_version.sh; sourceTree = "<group>"; };
+		EBDED3C11A05A64C0079A971 /* set_library_path.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = set_library_path.sh; sourceTree = "<group>"; };
+		EBDED3C31A05A64C0079A971 /* shell.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shell.c; sourceTree = "<group>"; };
+		EBDED3C41A05A64C0079A971 /* shell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shell.h; sourceTree = "<group>"; };
+		EBDED3DC1A05A80E0079A971 /* wait.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wait.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +108,85 @@
 		EBDED3921A05A5B50079A971 /* shell */ = {
 			isa = PBXGroup;
 			children = (
-				EBDED3931A05A5B50079A971 /* main.c */,
+				EBDED3DC1A05A80E0079A971 /* wait.h */,
+				EBDED39A1A05A64C0079A971 /* CommandParser.c */,
+				EBDED39B1A05A64C0079A971 /* CommandParser.h */,
+				EBDED39C1A05A64C0079A971 /* common.h */,
+				EBDED39D1A05A64C0079A971 /* DirectoryTraverser.c */,
+				EBDED39E1A05A64C0079A971 /* DirectoryTraverser.h */,
+				EBDED39F1A05A64C0079A971 /* doxygen-config */,
+				EBDED3A01A05A64C0079A971 /* error.c */,
+				EBDED3A11A05A64C0079A971 /* git.log */,
+				EBDED3A21A05A64C0079A971 /* Job.c */,
+				EBDED3A31A05A64C0079A971 /* Job.h */,
+				EBDED3A41A05A64C0079A971 /* JobManager.c */,
+				EBDED3A51A05A64C0079A971 /* JobManager.h */,
+				EBDED3A61A05A64C0079A971 /* list_src */,
+				EBDED3BD1A05A64C0079A971 /* Makefile */,
+				EBDED3BE1A05A64C0079A971 /* ourhdr.h */,
+				EBDED3BF1A05A64C0079A971 /* README */,
+				EBDED3C01A05A64C0079A971 /* set_git_version.sh */,
+				EBDED3C11A05A64C0079A971 /* set_library_path.sh */,
+				EBDED3C31A05A64C0079A971 /* shell.c */,
+				EBDED3C41A05A64C0079A971 /* shell.h */,
 			);
 			path = shell;
+			sourceTree = "<group>";
+		};
+		EBDED3A61A05A64C0079A971 /* list_src */ = {
+			isa = PBXGroup;
+			children = (
+				EBDED3A71A05A64C0079A971 /* doxygen-config */,
+				EBDED3A81A05A64C0079A971 /* include */,
+				EBDED3AA1A05A64C0079A971 /* lib */,
+				EBDED3AC1A05A64C0079A971 /* libsrc */,
+				EBDED3B31A05A64C0079A971 /* Makefile */,
+				EBDED3B41A05A64C0079A971 /* README */,
+				EBDED3B51A05A64C0079A971 /* testsuite */,
+			);
+			path = list_src;
+			sourceTree = "<group>";
+		};
+		EBDED3A81A05A64C0079A971 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				EBDED3A91A05A64C0079A971 /* .hidden */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		EBDED3AA1A05A64C0079A971 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				EBDED3AB1A05A64C0079A971 /* .hidden */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		EBDED3AC1A05A64C0079A971 /* libsrc */ = {
+			isa = PBXGroup;
+			children = (
+				EBDED3AD1A05A64C0079A971 /* common.h */,
+				EBDED3AE1A05A64C0079A971 /* List.c */,
+				EBDED3AF1A05A64C0079A971 /* List.h */,
+				EBDED3B01A05A64C0079A971 /* Makefile */,
+				EBDED3B11A05A64C0079A971 /* Node.c */,
+				EBDED3B21A05A64C0079A971 /* Node.h */,
+			);
+			path = libsrc;
+			sourceTree = "<group>";
+		};
+		EBDED3B51A05A64C0079A971 /* testsuite */ = {
+			isa = PBXGroup;
+			children = (
+				EBDED3B61A05A64C0079A971 /* Makefile */,
+				EBDED3B71A05A64C0079A971 /* Object.c */,
+				EBDED3B81A05A64C0079A971 /* Object.h */,
+				EBDED3B91A05A64C0079A971 /* RandomTestList.c */,
+				EBDED3BA1A05A64C0079A971 /* SimpleTestList.c */,
+				EBDED3BB1A05A64C0079A971 /* UnitTestList.c */,
+			);
+			path = testsuite;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,7 +245,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBDED3941A05A5B50079A971 /* main.c in Sources */,
+				EBDED3D11A05A64C0079A971 /* Makefile in Sources */,
+				EBDED3D01A05A64C0079A971 /* Makefile in Sources */,
+				EBDED3CA1A05A64C0079A971 /* error.c in Sources */,
+				EBDED3CD1A05A64C0079A971 /* List.c in Sources */,
+				EBDED3CB1A05A64C0079A971 /* Job.c in Sources */,
+				EBDED3D71A05A64C0079A971 /* Makefile in Sources */,
+				EBDED3CC1A05A64C0079A971 /* JobManager.c in Sources */,
+				EBDED3D81A05A64C0079A971 /* shell.c in Sources */,
+				EBDED3C91A05A64C0079A971 /* DirectoryTraverser.c in Sources */,
+				EBDED3D21A05A64C0079A971 /* Object.c in Sources */,
+				EBDED3CF1A05A64C0079A971 /* Node.c in Sources */,
+				EBDED3D41A05A64C0079A971 /* SimpleTestList.c in Sources */,
+				EBDED3CE1A05A64C0079A971 /* Makefile in Sources */,
+				EBDED3D31A05A64C0079A971 /* RandomTestList.c in Sources */,
+				EBDED3C81A05A64C0079A971 /* CommandParser.c in Sources */,
+				EBDED3D51A05A64C0079A971 /* UnitTestList.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

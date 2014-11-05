@@ -1,8 +1,8 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include <List.h>
-#include <Node.h>
+#include "List.h"
+#include "Node.h"
 
 int compareTo(const void *obj, const void *other) 
 { 

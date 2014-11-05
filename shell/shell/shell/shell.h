@@ -1,13 +1,13 @@
 #include <stdio.h>
-#include <readline/readline.h>
-#include <readline/history.h>
+#include "readline.h"
+#include "history.h"
 #include <sys/wait.h>
 #include <regex.h>
 #include "ourhdr.h"
 #include "CommandParser.h"
 #include "DirectoryTraverser.h"
 #include "JobManager.h"
-#include <List.h>
+#include "List.h"
 
 #ifndef SHELL_H
 #define	SHELL_H

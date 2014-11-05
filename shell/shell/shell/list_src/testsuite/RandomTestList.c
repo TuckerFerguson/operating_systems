@@ -2,16 +2,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <common.h>
-#include <Node.h>
-#include <List.h>
+#include "common.h"
+#include "Node.h"
+#include "List.h"
 
 #include "Object.h"
 
+const int DEBUG_LEVEL = 0;
 const int NUM_TESTS = 7;
 /*const int DEBUG = 2;*/
-const int DEBUG = 0;
-
 void print_stats(int *tests)
 {
   printf(" ========================\n");
@@ -45,42 +44,42 @@ void runRandomTests(int count, unsigned int seed, int n, ListPtr list)
     tests[test]++;
     switch (test) {
     case 0:
-      if (DEBUG > 1) fprintf(stderr,"addAtFront\n");
+      if (DEBUG_LEVEL > 1) fprintf(stderr,"addAtFront\n");
       n++;
       job = createObject(n, "some info");
       node = createNode(job);
       addAtFront(list, node);
       break;
     case 1:
-      if (DEBUG > 1) fprintf(stderr,"addAtRear\n");
+      if (DEBUG_LEVEL > 1) fprintf(stderr,"addAtRear\n");
       n++;
       job = createObject(n, "some info");
       node = createNode(job);
       addAtRear(list, node);
       break;
     case 2:
-      if (DEBUG > 1) fprintf(stderr,"removeFront\n");
+      if (DEBUG_LEVEL > 1) fprintf(stderr,"removeFront\n");
       node = removeFront(list);
       freeNode(node, freeObject);
       break;
     case 3:
-      if (DEBUG > 1) fprintf(stderr,"removeRear\n");
+      if (DEBUG_LEVEL > 1) fprintf(stderr,"removeRear\n");
       node = removeRear(list);
       freeNode(node, freeObject);
       break;
     case 4:
-      if (DEBUG > 1) fprintf(stderr,"removeNode\n");
+      if (DEBUG_LEVEL > 1) fprintf(stderr,"removeNode\n");
       searchJob = createObject(i,"foo");
       node = removeNode(list, search(list, searchJob));
       freeNode(node, freeObject);
       freeObject(searchJob);
       break;
     case 5:
-      if (DEBUG > 1) fprintf(stderr,"reverseList\n");
+      if (DEBUG_LEVEL > 1) fprintf(stderr,"reverseList\n");
       reverseList(list);
       break;
     case 6:
-      if (DEBUG > 1) fprintf(stderr,"searchList\n");
+      if (DEBUG_LEVEL > 1) fprintf(stderr,"searchList\n");
       searchJob = createObject(i,"foo");
       node = search(list, searchJob);
       freeObject(searchJob);
@@ -127,7 +126,7 @@ int main(int argc, char **argv)
 
   runRandomTests(count, seed, n, list);
 
-  if (DEBUG > 0)
+  if (DEBUG_LEVEL > 0)
     printList(list);
 
   freeList(list);

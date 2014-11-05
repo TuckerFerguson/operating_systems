@@ -4,9 +4,9 @@
  *
  * Created on September 27, 2014, 2:43 PM
  */
-#include <common.h>
-#include <List.h>
-#include <Node.h>
+#include "common.h"
+#include "List.h"
+#include "Node.h"
 #include "Job.h"
 #include "ourhdr.h"
 #include "unistd.h"

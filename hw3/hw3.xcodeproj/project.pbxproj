@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EB83940D1A087CBD00514C1E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = EB83940C1A087CBD00514C1E /* main.c */; };
+		EB83940D1A087CBD00514C1E /* file_access_monitor.c in Sources */ = {isa = PBXBuildFile; fileRef = EB83940C1A087CBD00514C1E /* file_access_monitor.c */; };
+		EB8394151A087F0D00514C1E /* driver.c in Sources */ = {isa = PBXBuildFile; fileRef = EB8394141A087F0D00514C1E /* driver.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +25,9 @@
 
 /* Begin PBXFileReference section */
 		EB8394091A087CBD00514C1E /* hw3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = hw3; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB83940C1A087CBD00514C1E /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		EB83940C1A087CBD00514C1E /* file_access_monitor.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = file_access_monitor.c; sourceTree = "<group>"; };
+		EB8394131A087D0F00514C1E /* file_acess_monitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = file_acess_monitor.h; sourceTree = "<group>"; };
+		EB8394141A087F0D00514C1E /* driver.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = driver.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +60,9 @@
 		EB83940B1A087CBD00514C1E /* hw3 */ = {
 			isa = PBXGroup;
 			children = (
-				EB83940C1A087CBD00514C1E /* main.c */,
+				EB83940C1A087CBD00514C1E /* file_access_monitor.c */,
+				EB8394131A087D0F00514C1E /* file_acess_monitor.h */,
+				EB8394141A087F0D00514C1E /* driver.c */,
 			);
 			path = hw3;
 			sourceTree = "<group>";
@@ -118,7 +123,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB83940D1A087CBD00514C1E /* main.c in Sources */,
+				EB83940D1A087CBD00514C1E /* file_access_monitor.c in Sources */,
+				EB8394151A087F0D00514C1E /* driver.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
