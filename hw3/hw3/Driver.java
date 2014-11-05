@@ -22,12 +22,12 @@ public class Driver {
         
         int max = Integer.parseInt(args[0]);
         monitor = new FileAccessMonitor(max);
-        Random rand = new Random();
+        Random rand = new Random(max);
         
         List<Thread> threads = new ArrayList<>();
         for (int i = 0; i < MAX_THREADS; ++i)
         {
-           Thread fileAccessThread = new FileAccessThread(rand.nextInt() % max, monitor);
+           Thread fileAccessThread = new FileAccessThread(rand.nextInt(max), monitor);
            threads.add(fileAccessThread);
            fileAccessThread.start();
         }

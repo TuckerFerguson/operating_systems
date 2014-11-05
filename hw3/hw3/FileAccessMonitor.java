@@ -1,4 +1,4 @@
-/**
+	/**
  *
  * @author reubentanner
  */
@@ -38,6 +38,6 @@ public class FileAccessMonitor {
     
     public int getPid()
     {
-        return Integer.parseInt(Thread.currentThread().getName().split("-")[1]);
+        return Integer.parseInt(Thread.currentThread().getName());
     }
 }
