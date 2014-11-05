@@ -14,7 +14,7 @@
 #define MAX_THREADS 16
 
 void* operate_on_file(void * arg);
-static void set_thread_name(int id);
+//static void set_thread_name(int id);
 
 int n;
 monitor_ptr monitor;
@@ -41,22 +41,15 @@ int main(int argc, char** argv)
     {
         pthread_join(threads[i], NULL);
     }
-    
+    exit(EXIT_SUCCESS);
 }
 
 void* operate_on_file(void * arg)
 {
-    set_thread_name((int)arg);
-    access_file(monitor);
+//    set_thread_name((int)arg);
+    access_file(monitor, (int)arg);
     sleep(1);
-    release_file(monitor);
+    release_file(monitor, (int)arg);
     
     return NULL;
-}
-
-static void set_thread_name(int id)
-{
-    char name[16];
-    sprintf(name, "%d", id);
-    pthread_setname_np(name);
 }

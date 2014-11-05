@@ -23,7 +23,7 @@ struct file_access_monitor {
 };
 
 monitor_ptr create_monitor(int);
-void access_file(monitor_ptr);
-void release_file(monitor_ptr);
+void access_file(monitor_ptr, int);
+void release_file(monitor_ptr, int);
 
 #endif
