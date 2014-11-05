@@ -1,0 +1,25 @@
+****************
+* Project 1
+* CS 453
+* September 28, 2014
+* Reuben Tanner
+**************** 
+
+PROJECT OVERVIEW:
+
+Mini-shell
+
+SUBMITTED FILES:
+	
+	
+BUILDING AND RUNNING:
+	Leave files in the directory structure specified above, and type the 
+	following commands from the top	level directory.
+
+	Compile:
+		eval $(./set_library_path.sh);
+		./build.sh
+
+	Run:
+		./mydash
+	

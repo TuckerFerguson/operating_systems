@@ -1,0 +1,58 @@
+****************
+* HW3
+* CS 453
+* 11/4/2014
+* Reuben Tanner
+**************** 
+
+PROJECT OVERVIEW:
+
+Another monitor.
+
+SUBMITTED FILES:
+├── Driver.java
+├── FileAccessMonitor.class
+├── FileAccessMonitor.java
+├── FileAccessThread.class
+├── FileAccessThread.java
+├── Makefile
+├── driver.c
+├── file_access_monitor.c
+└── file_acess_monitor.h
+	
+BUILDING AND RUNNING:
+	Leave files in the directory structure specified above, and type the following commands from the top level directory.
+
+	Compile:
+		make
+
+	Run:
+		java Driver <n>
+		or
+		./driver <n>
+
+PSEUDOCODE:
+
+monitor FileAccess {
+
+	public:
+
+	void StartAccess(int id) 
+	{
+		lock();
+		while (condition_is_false())
+		{
+			wait_on_condition();
+		}
+		access_file();
+		unlock();
+	}
+
+	void EndAccess(int id) 
+	{
+		lock();
+		release_file();
+		signal_condition();
+		unlock();
+	}
+}

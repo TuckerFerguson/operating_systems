@@ -1,0 +1,102 @@
+****************
+* Project 1
+* CS 453
+* September 28, 2014
+* Reuben Tanner
+**************** 
+
+PROJECT OVERVIEW:
+
+Mini-shell
+
+SUBMITTED FILES:
+	
+	
+BUILDING AND RUNNING:
+	Leave files in the directory structure specified above, and type the following commands from the top	level directory.
+
+	Compile:
+		eval $(./set_library_path.sh);
+		make
+
+	Run:
+		./mydash [-v]
+
+	To update version:
+		make update_version
+
+SHELL DETAILS:
+
+OBSERVATIONS:
+Overall, I thought this project was pretty simple aside from some really strange behavior with processes reporting their completion status and getting the parent process to know whether or not the child was executed successfully. Aside from these two problems, I had only very minimal hitches throughout the development of this project. I think this was the first time I've written C code for more than a few hours without having an overwhelming desire to strangle kittens due to the anger produced by seg faults.
+
+VALGRIND EXPERIENCE:
+Tried for a while, had too many random segfaults that I didn't want to look into so I gave up... -10.
+
+DESIGN:
+I have decided to organize my functions by relation into files with semi-descriptive names e.g. all functions used for manipulating jobs or checking on status' of processes are in a file named JobManager.c. All operations involving command parsing are located in CommandParser.c, all operations related to directory traversal are found in DirectoryTraverser.c etc. I've endeavored to make the main routine of the shell as clear and clean as possible by making operations modular and simple.
+
+I plan on testing the shell by learning, modifying and using the test-harness that you've provided
+
+TESTING:
+Most of the functions in the files have been unit tested to ensure their functionality is correct. Unit testing the actual shell is not something I've done extensively here. The test cases are the second to last section of this readme.
+
+KNOWN BUGS:
+The exit status of a process is not accurate...I have no idea what needs to be changed but I fiddled with it for hours and didn't get it doing anything consistent. At times, all processes (even ones killed by kill -9) will report that exit with status 0 and that they have not been signaled. At other times, processes that exit normal will say that they have been signaled by signals way outside the range of [1,31] leading to no end of confusion on my part.
+
+If an invalid background task is entered, enter or jobs is hit to display its status and then IMMEDIATELY (like < .10s) you hit enter again the program will segfault. That's the only case
+
+line = readline(prompt) fails if the line is only spaces
+
+Leaking memory ALL OVER! :-(
+
+TEST CASES:
+normal execution
+	only whitespace -- fails in readline library
+	valid command -- success
+	valid command with 1 valid argument -- success
+	valid command with 1 invalid argument -- success
+	valid command with several valid arguments -- sucess
+	valid command with several invalid arguments -- success
+	valid command with mixed invalid and valid arguments - success
+	invalid command -- success
+	invalid command with 1 invalid argument - success
+	invalid command with several invalid arguments - success
+	
+background jobs
+	conjoined & and separated & for both valid and invalid commands -- success
+	only whitespace with & -- success
+	valid command -- success
+	valid command with 1 valid argument - success
+	valid command with 1 invalid argument - success
+	valid command with several valid arguments - success
+	valid command with several invalid arguments -- success
+	valid command with mixed invalid and valid arguments - success
+	invalid command - sucess
+	invalid command with 1 invalid argument - susceptible to race condition but successful most of the time
+	invalid command with several invalid arguments - susceptible to race condition but successful most of the time
+	
+cd
+	with no arguments - success
+	with . - success
+	with .. - success
+	with -  - success
+	with ~ - success
+	with invalid argument - success
+	as a background job - success
+
+exit
+	with argument - success
+	as a background job - success
+
+jobs/enter
+	pyramid completion times - success
+	all stopping at the same time - success
+	very short background job - success
+	start short and long jobs interleaved -- success
+
+version
+	
+prompt
+	have no DASH_PROMPT set
+	unset DASH_PROMPT during execution

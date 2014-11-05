@@ -1,0 +1,185 @@
+commit 3e22f7205b46d1da87a69f0312c334d80ad71ce5
+Author: Reuben Tanner <reuben@localhost.localdomain>
+Date:   Mon Sep 29 14:55:28 2014 -0600
+
+    another folder doesn't commit if there isnt anything in it
+
+commit b0654558fa82761aa6aa44ff3f6c704f288a4c60
+Author: Reuben Tanner <reuben@localhost.localdomain>
+Date:   Mon Sep 29 14:54:00 2014 -0600
+
+    folder is missing after clean
+
+commit 7958d6aae78ae26b16b1f833c18349f5955380cb
+Author: Reuben Tanner <reuben@localhost.localdomain>
+Date:   Mon Sep 29 14:51:07 2014 -0600
+
+    one modification to README
+
+commit 6aa02d72ae739359412512492816caac07553cce
+Author: Reuben Tanner <reuben@localhost.localdomain>
+Date:   Mon Sep 29 14:48:39 2014 -0600
+
+    making one change to ld library path script
+
+commit 0820b1c3d70ee71273da82f328bac68a08614606
+Author: Reuben Tanner <reuben@localhost.localdomain>
+Date:   Mon Sep 29 14:46:06 2014 -0600
+
+    updating version and adding log
+
+commit c564a50047a875c03d2894467eb267e0146581a1
+Author: Reuben Tanner <reuben@localhost.localdomain>
+Date:   Mon Sep 29 14:42:18 2014 -0600
+
+    gave up on memory leaks, ran through test cases. still have a couple bugs and lots of memory leaks...expecting an 80 on this
+
+commit a519b4043f1add9be3223c58c649d99266bd7191
+Author: Reuben Tanner <reuben@localhost.localdomain>
+Date:   Mon Sep 29 13:49:30 2014 -0600
+
+    fixed short running background task bug but also discovered very subtle race condition.
+
+commit 0a2d33eb0f08eba0986fd328d5c1763e95f136d2
+Author: Reuben Tanner <reuben@localhost.localdomain>
+Date:   Mon Sep 29 12:07:46 2014 -0600
+
+    fixed bug with invalid processes being logged by using a pipe, also fixed incorrect process status bug by checking the return pid from waipid
+
+commit 1145ed07a258a67503656f96b004612f13f8eaa5
+Author: Reuben Tanner <reuben@localhost.localdomain>
+Date:   Sun Sep 28 21:33:04 2014 -0600
+
+    Removing more files
+
+commit 87314dc57bf2d3fe0c5781b77ee02c260f845b2f
+Author: Reuben Tanner <reuben@localhost.localdomain>
+Date:   Sun Sep 28 21:31:38 2014 -0600
+
+    last minute changes before submit
+
+commit dce3b3e4aed23ce1c9aad6ecc7c308ec9ff066c0
+Author: Reuben Tanner <reuben@localhost.localdomain>
+Date:   Sun Sep 28 21:08:38 2014 -0600
+
+    still have a few bugs but I didnt budget enough time to get this done completely
+
+commit 5eeb7bb20ad7d47c7d763139dbde26c288e3a8ce
+Author: Reuben Tanner <reuben@localhost.localdomain>
+Date:   Sun Sep 28 20:50:00 2014 -0600
+
+    Added version option to shell with dynamically generated git hash
+
+commit e91760b9f123bef1fb155189100510b8b56e8145
+Author: Reuben Tanner <reuben@localhost.localdomain>
+Date:   Sun Sep 28 20:12:06 2014 -0600
+
+    cleaned up useless files
+
+commit 9c052b2128ca8bddc248800d59106cd11742fdfc
+Author: Reuben Tanner <reuben@localhost.localdomain>
+Date:   Sun Sep 28 20:09:22 2014 -0600
+
+    cleaning unnecessary files
+
+commit 40ea51c69b8bae646c9d6b6fc4c23a3f00236d95
+Author: Reuben Tanner <reuben@localhost.localdomain>
+Date:   Sun Sep 28 20:07:39 2014 -0600
+
+    added Readme, doxygen documentation, top level makefile, modified directory structure to conform with project description, plugged up all memory leaks. Still need to implement version feature and fix two known bugs
+
+commit a089be1d51d1f79d1d90a03fe9710e712f05f03f
+Author: Reuben Tanner <reuben@localhost.localdomain>
+Date:   Sun Sep 28 14:41:03 2014 -0600
+
+    having really weird issues determining what signal killed the process. If i check more than once, the WTERMSIG returns 0 but if I only check once it sometimes says a process killed by kill -9 was killed with randomly numbered signals...trying on a different VM to see if something is really screwed up around here.
+
+commit 3bb164f3056aa400e9eecf9ba1fb364adfcced95
+Author: Reuben Tanner <reuben@localhost.localdomain>
+Date:   Sat Sep 27 21:09:37 2014 -0600
+
+    Making slight modifications of the function that prints the list in the list library
+
+commit 7e8f24654d1d50b6066ef06324f2ee433b27f3f1
+Author: Reuben Tanner <reuben@localhost.localdomain>
+Date:   Sat Sep 27 21:06:22 2014 -0600
+
+    implemented background jobs, an incomplete job number scheme, job list, and partial simple job control. Still need to go back and do the job print out that checks to see if the jobs are done or not and to reuse job numbers
+
+commit 3ee3072221f026f9a09ecec8fa76100bbebf704b
+Author: Reuben Tanner <reuben@localhost.localdomain>
+Date:   Sat Sep 27 17:41:21 2014 -0600
+
+    exit, cd, empty commands, prompt, normal commands and handling EOF completed. Structs created for job management
+
+commit 0a9eb557978fefdf2f5f3e04d807270e51ff5140
+Author: Reuben Tanner <reuben@localhost.localdomain>
+Date:   Tue Sep 23 21:26:38 2014 -0600
+
+    added command parser...its leaking memory in one place...dont know if i care
+
+commit e4d7fe300ba214fc92f695a3ef74c926b5c5a015
+Author: Reuben Tanner <reubentanner@mobilebeast.local>
+Date:   Tue Sep 23 20:33:09 2014 -0600
+
+    adding netbeans config
+
+commit 0c2f44b486e858d5ec33dc2f3fad5e51e31c296c
+Author: Reuben Tanner <reubentanner@mobilebeast.local>
+Date:   Tue Sep 23 20:25:02 2014 -0600
+
+    added command parser and tests for it
+
+commit 2e3251b02e975fcf416ead698ef3d293c3e1c540
+Author: Reuben Tanner <reuben@localhost.localdomain>
+Date:   Tue Sep 23 19:29:37 2014 -0600
+
+    going back to mac...turns out everything's being exactly the same.
+
+commit 6e10ed307fbd44c067735a523f4da856e6aecc85
+Author: Reuben Tanner <reuben@localhost.localdomain>
+Date:   Tue Sep 23 18:48:27 2014 -0600
+
+    working
+
+commit b3b5f85564c0b3faab80317d8db36ed36e37b0b8
+Author: Reuben Tanner <reubentanner@mobilebeast.local>
+Date:   Tue Sep 23 18:32:57 2014 -0600
+
+    adding error and ourhdr to project
+
+commit 96b3782157e0590492b9e0606785c05f29bf1d2b
+Author: Reuben Tanner <reubentanner@mobilebeast.local>
+Date:   Tue Sep 23 18:17:46 2014 -0600
+
+    adding libraries
+
+commit e7dfe39afa108b8b11f35d34ea8e8a716cb07822
+Author: Reuben Tanner <reubentanner@mobilebeast.local>
+Date:   Tue Sep 23 18:04:13 2014 -0600
+
+    giving up on trying to get this to compile on mac...moving to vm
+
+commit eaf1935b24c1e9ea796ba52ca0c2762e7f025638
+Author: Reuben Tanner <reubentanner@mobilebeast.local>
+Date:   Mon Sep 22 18:31:44 2014 -0600
+
+    adding list library and xcodeproject is configured to utilize makefile for builds
+
+commit d23eb7e51a34c9d7e922b829ce6cc33ef0ac8cef
+Author: Reuben Tanner <reubentanner@mobilebeast.local>
+Date:   Mon Sep 22 15:06:41 2014 -0600
+
+    adding base files for shell
+
+commit 48c5c34c7a805c6a94817513777c8e25ca7e3738
+Author: Reuben Tanner <reubentanner@mobilebeast.local>
+Date:   Mon Sep 22 14:46:16 2014 -0600
+
+    initial commit
+
+commit ce0843eeb7288aa2fdecec5f06107860381eb385
+Author: Reuben Tanner <reuben123@gmail.com>
+Date:   Mon Sep 22 14:42:38 2014 -0600
+
+    Initial commit
