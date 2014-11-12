@@ -1,6 +1,6 @@
 #!/bin/sh
-module="booga"
-device="booga"
+module="example"
+device="example"
 
 # invoke rmmod with all arguments we got
 /sbin/rmmod $module $* || exit 1

@@ -1,11 +1,12 @@
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <string.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 
 
@@ -23,18 +24,13 @@ static void run_read_test(char *device, int bufsize)
 		exit(1);
 	}
 
-	buf = (char *) malloc(sizeof(char)*(bufsize+1));
+	buf = (char *) malloc(sizeof(char)*bufsize);
 	in = read(src, buf, bufsize);
     if (in < 0) {
 		perror("Read failed:");
 		exit(2);
-	} else {
-		fprintf(stderr, " booga returned %d characters\n", in);
 	}
-
-	buf[bufsize]='\0';
 	printf("%s\n",buf);
-	free(buf);
 
 	close(src);
 
@@ -52,11 +48,10 @@ static void run_write_test(char *device, int bufsize)
 		perror("Open for write failed:");
 		exit(1);
 	}
-	buf = (char *) malloc(sizeof(char)*(bufsize+1));
-	fprintf(stderr, "Attempting to write to booga device\n");
+	buf = (char *) malloc(sizeof(char)*bufsize);
+	printf("Attempting to write to example device\n");
 	out = write(src, buf, bufsize);
-	fprintf(stderr, "Wrote %d bytes.\n", out);
-	free(buf);
+	printf("Wrote %d bytes.\n", out);
 	close(src);
 
 }/* run_write_test */
@@ -79,19 +74,15 @@ int main(int argc, char **argv)
 	}
 
 	device = (char *)malloc(sizeof(char)*DEV_NAME_SIZE);
-	strcpy(device, "/dev/booga");
+	strcpy(device, "/dev/example");
 	minor = atoi(argv[1]);
-	if ((minor >= 0) && (minor < 4))
+	if ((minor >= 0) && (minor <= 4))
 		strcat(device, argv[1]);
 	else {
-		fprintf(stderr,"%s: Invalid minor number: %d :0<= minor# < 4:\n", argv[0], minor);
+		fprintf(stderr,"%s: Invalid minor number: %d :0<= minor# <= 4:\n", argv[0], minor);
 		exit(1);
 	}
 	bufsize = atoi(argv[2]);
-    if (bufsize < 0) {
-		fprintf(stderr, "%s: bufsize must be positive!", argv[0]);
-		exit(1);
-    }
 
 	if (strncmp(argv[3],"r",1)==0)
 		run_read_test(device, bufsize);

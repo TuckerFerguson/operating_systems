@@ -1,13 +1,16 @@
 
-KERNEL_SOURCE=/lib/modules/`uname -r`/build
 all:
-	 make -C ${KERNEL_SOURCE} M=`pwd` modules
-
-obj-m += booga.o
-
+	cd hello; make; echo
+	cd example1; make; echo
+	cd example2; make; echo
+	cd proc-ex1; make; echo
+	cd example3; make; echo
+	cd example4; make; echo
+	
 clean:
-	/bin/rm --force .booga* booga.o booga.mod.c booga.mod.o booga.ko Modules.*
-	/bin/rm -fr .tmp_versions/
-
-
-
+	cd hello; make clean; echo
+	cd example1; make clean; echo
+	cd example2; make clean; echo
+	cd proc-ex1; make clean; echo
+	cd example3; make clean; echo
+	cd example4; make clean; echo

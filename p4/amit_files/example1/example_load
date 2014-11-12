@@ -1,6 +1,6 @@
 #!/bin/sh 
-module="booga"
-device="booga"
+module="example"
+device="example"
 group="wheel"
 mode="644"
 
@@ -15,7 +15,6 @@ fi
 major=`cat /proc/devices | awk "\\$2==\"$module\" {print \\$1}"`
 
 # Remove stale nodes and replace them, then give gid and perms
-# Usually the script is shorter, it's scull that has several devices in it.
 
 rm -f /dev/${device}[0-3]
 mknod /dev/${device}0 c $major 0
