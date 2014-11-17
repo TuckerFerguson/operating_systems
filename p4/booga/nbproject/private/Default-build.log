@@ -1,0 +1,8 @@
+make -C /lib/modules/`uname -r`/build M=`pwd` modules
+make[1]: Entering directory `/usr/src/linux-headers-3.13.0-39-generic'
+  CC [M]  /home/reuben/operating_systems/p4/booga/booga.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC      /home/reuben/operating_systems/p4/booga/booga.mod.o
+  LD [M]  /home/reuben/operating_systems/p4/booga/booga.ko
+make[1]: Leaving directory `/usr/src/linux-headers-3.13.0-39-generic'
