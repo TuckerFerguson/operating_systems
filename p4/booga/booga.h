@@ -30,7 +30,8 @@ struct booga_stats {
 	long int phrase0; 
 	long int phrase1; 
 	long int phrase2; 
-	long int phrase3; 
+	long int phrase3;
+    struct semaphore lock;
 };
 
 #define READ_OPERATION 0

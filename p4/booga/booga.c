@@ -31,6 +31,8 @@ static int random(void);
 static void update_phrase_usage(int phrase_index);
 static void update_opens(int minor_number);
 static void update_byte_throughput(int is_read, int number_of_bytes);
+static int lock(void);
+static void unlock(void);
 
 static struct file_operations booga_driver_operations = {
     .read =       booga_read,
@@ -50,7 +52,11 @@ static int booga_open (struct inode *inode, struct file *file_struct)
 
     file_struct->f_op = &booga_driver_operations;
     
-    update_opens(minor_number);
+    // int lock_result = lock();
+    // if (!lock_result)
+    //     return lock_result;
+   // update_opens(minor_number);
+   // unlock();
     
     try_module_get(THIS_MODULE);
     return 0;
@@ -62,44 +68,71 @@ static int booga_release (struct inode *inode, struct file *filp)
     return (0);
 }
 
-static ssize_t booga_read (struct file *filp, char *user_space_buffer, size_t number_of_bytes, loff_t *f_pos)
+static ssize_t booga_read (struct file *filp, char *user_space_buffer, size_t number_of_bytes_to_read, loff_t *f_pos)
 {
+    int lock_result = lock();
+    if (!lock_result)
+        return lock_result;
     printk("<1>booga_read invoked.\n");
-    int bytes_written = 0;
-    update_byte_throughput(READ_OPERATION, number_of_bytes);
-    char* kernel_space_buffer = (char*)kmalloc(sizeof(char)*number_of_bytes, GFP_KERNEL);
-    memset(kernel_space_buffer, '\0', number_of_bytes);
-    while (number_of_bytes != 0)
+    
+    if (number_of_bytes_to_read > KMALLOC_MAX_SIZE)
+    {
+        printk("<1>attempted to read more than max size.\nSetting to default max %lu", KMALLOC_MAX_SIZE);
+        number_of_bytes_to_read = KMALLOC_MAX_SIZE;
+    }
+    
+    int bytes_read = 0;
+    
+    // int lock_result = lock();
+    // if (!lock_result)
+    //     return lock_result;
+    update_byte_throughput(READ_OPERATION, number_of_bytes_to_read);
+    // unlock();
+    
+    char* kernel_space_buffer = (char*)kmalloc(sizeof(char)*number_of_bytes_to_read, GFP_KERNEL);
+    if (!kernel_space_buffer)
+    {
+        printk("<1>Memory allocation failed. Aborting read.\n");
+        return -ENOMEM;
+    }
+    
+    memset(kernel_space_buffer, '\0', number_of_bytes_to_read);
+    while (number_of_bytes_to_read != 0)
     {
         int size_of_phrase, phrase_index;
-        char* phrase;
-        phrase_index = random();
+        char* phrase;       
+        // phrase_index = random();
+        phrase_index = 1;
         phrase = phrases[phrase_index];
+       
+
         update_phrase_usage(phrase_index);
+        
+        
         size_of_phrase = strlen(phrase);
-        if (size_of_phrase <= number_of_bytes)
+        if (size_of_phrase <= number_of_bytes_to_read)
         {
-            number_of_bytes -= size_of_phrase;
-            bytes_written += size_of_phrase;
+            number_of_bytes_to_read -= size_of_phrase;
+            bytes_read += size_of_phrase;
             strcat(kernel_space_buffer, phrase);
         }
         else
         {
-            char partial_phrase[number_of_bytes+1];
+            char partial_phrase[number_of_bytes_to_read+1];
             int i;
-            for (i=0;i<number_of_bytes;++i)
+            for (i=0;i<number_of_bytes_to_read;++i)
             {
                 partial_phrase[i]=phrase[i];
             }
             partial_phrase[i] = '\0';
-            bytes_written += number_of_bytes;
-            number_of_bytes = 0;
+            bytes_read += number_of_bytes_to_read;
+            number_of_bytes_to_read = 0;
             strcat(kernel_space_buffer, partial_phrase);
         }
     }
-    copy_to_user(user_space_buffer, kernel_space_buffer, bytes_written);
-    //free string
-    
+    copy_to_user(user_space_buffer, kernel_space_buffer, bytes_read);
+    kfree(kernel_space_buffer);
+    unlock();
     return 0;
 }
 
@@ -122,8 +155,11 @@ static ssize_t booga_write (struct file *file_struct, const char *user_space_buf
             printk("<1>Error killing process: %d.\n", kill_status);
         }
     }
-    
-    update_byte_throughput(WRITE_OPERATION, number_of_bytes);
+    // int lock_result = lock();
+    // if (!lock_result)
+    //     return lock_result;
+    // update_byte_throughput(WRITE_OPERATION, number_of_bytes);
+    // unlock();
     return number_of_bytes; 
 }
 
@@ -139,6 +175,7 @@ static void init_booga_device_stats(void)
     booga_device_stats->phrase1=0;
     booga_device_stats->phrase2=0;
     booga_device_stats->phrase3=0;
+    sema_init(&booga_device_stats->lock, 1);
 }
 
 static int booga_proc_show(struct seq_file *sequence_file, void *v)
@@ -283,6 +320,19 @@ static void update_phrase_usage(int phrase_index)
             booga_device_stats->phrase3++;
             break;
     }
+}
+
+static int lock()
+{
+    if (down_interruptible (&booga_device_stats->lock))
+	   return (-ERESTARTSYS);
+    else
+        return 1;
+}
+
+static void unlock()
+{
+    up(&booga_device_stats->lock);
 }
 
 
