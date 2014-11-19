@@ -1,0 +1,52 @@
+****************
+* Project 4
+* CS 453
+* November 18, 2014
+* Reuben Tanner
+**************** 
+
+PROJECT OVERVIEW:
+
+Device driver
+
+SUBMITTED FILES:
+	
+├── booga.c
+├── booga.h
+├── load_booga
+├── Makefile
+├── README
+├── run_tests.sh
+├── test-booga
+├── test-booga.c
+└── unload_booga
+
+BUILDING AND RUNNING:
+	Leave files in the directory structure specified above, and type the following commands from the top level directory.
+
+	Compile and load:
+		make clean; make; ./unload_booga; ./load_booga;
+		
+	Run:
+		./run-tests.sh
+
+TEST PLAN:
+
+Concurrency validation:
+1. Craft a script like the run-tests.sh script.
+2. Note the number of bytes that should be written or read based on the predefined number of iterations
+3. Run several instance of the script concurrently.
+4. Ensure that the /proc entry for the driver reports the expected values
+
+Partial phrase validation:
+1. Modify the phrases that will be printed by booga to be of equal length.
+2. Provide amounts of bytes to read that are not multiples of the length of a phrase.
+3. Ensure that the phrase is cut off where it is expected.
+
+Verify termination of process attempting to write to minor 3:
+1. Attempt to read the driver at minor number 3 and ensure the process is terminated.
+2. Optional - Access it from a program that has a exit procedures upon receiving the SIGTERM signal and ensure that those procedures are executed.
+
+* Ensure the value returned for the read is equal to the value that is crafted internally by the driver.
+
+
