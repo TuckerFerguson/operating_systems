@@ -98,6 +98,14 @@ static ssize_t example_read (struct file *filp, char *buf, size_t count, loff_t 
 		return (-ERESTARTSYS);
 	example_device_stats->num_read++; 
 	up(&example_device_stats->sem);
+
+    char* kernel_space_buffer = (char*)kmalloc(sizeof(char)*count, GFP_KERNEL);
+    if (!kernel_space_buffer)
+    {
+        printk("<1>Memory allocation failed. Aborting read.\n");
+        return -ENOMEM;
+    }
+
     return 0;
 }
 
